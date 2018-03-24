@@ -62,3 +62,16 @@ a:link{
     top:10px;
 }
 
+#message-box{
+    margin-top:10px;
+    height: 40px;
+    text-align: center;
+    background: #FFEBE8;
+    border: 1px solid #D52727;
+    color:#D52727;
+}
+
+#errMessage{
+    position: relative;
+    top:10px;
+}

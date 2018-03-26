@@ -1,5 +1,7 @@
-$(document).ready(function () {
-    $("#registration-form").submit(function () {
+const URL = "http://localhost:8080/user/register";
+
+$(document).ready(() => {
+    $("#registration-form").submit(() => {
         const user = {};
         user.firstName = $("#firstName").val();
         user.lastName = $("#lastName").val();

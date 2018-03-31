@@ -1,7 +1,34 @@
 @media (min-width: 992px) {
-    navbarLinks.navbar-nav.navbar-sidenav{
-        bottom: 0;
-        position: fixed;
-        overlay: none;
+    #margin {
+        background: #343a40;
+        max-width: 250px;
+        min-width: 250px;
+        height: 100%;
+    }
+    footer.fixed-footer {
+        width: calc(100% - 250px);
     }
 }
+
+@media (max-width: 992px) {
+    footer.fixed-footer {
+        width: 100%;
+    }
+}
+
+#mainContent {
+    padding-left: 5%;
+    padding-right: 15%;
+}
+
+footer.fixed-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 56px;
+    background-color: #e9ecef;
+    line-height: 55px;
+}
+
+html,body { height:100%; }
+

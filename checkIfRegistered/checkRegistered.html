@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>registration-check</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/check.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/checkRegistration.js"></script>
+  
+</head>
+<body>
+<div class="container-fluid">
+    <br>
+    <h4>Banner</h4>
+    <p> .</p>
+    <p>. </p>
+    <p> .</p>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top fill" id="mainNav">
+    <a class="navbar-brand" href="">Strona Główna</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav align-self-end" id="navbarLinks" >
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="O Konferencji">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#navbarLinks">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">O Konferencji</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti">
+                    <li>
+                        <a class="nav-link" href="">Program</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">Komitet</a>
+                    </li>
+                    <li>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Poprzednie konferencje</a>
+                        <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                            <li>
+                                <a href="#">Konferencja 2017</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kontakt">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">Kontakt</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Płatności">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">Płatności</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Wyszukaj konto">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">Wyszukaj konto</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zarejestruj się">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">Zarejestruj się</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zresetuj hasło">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">Zresetuj hasło</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pomoc">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-arrow-right"></i>
+                    <span class="nav-link-text">Pomoc</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
+                <a class="nav-link" href="">
+                    <i class="fa fa-fw fa-envelope"></i>
+                    <span class="nav-link-text">Napisz do nas</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="logIn/idx.html">
+                    <i class="fa fa-fw fa-sign-in"></i>Zaloguj</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid"><br>
+   <div class="row flex-xl=nowrap">
+       <div class=" col-12 col-md-12 col-lg-3 col-xl-2 bd-sidebar">
+       </div>
+       <main class="col-12 col-md-12 col-lg-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main">
+            <div class="checkRegister">
+                <h4>Sprawdź czy jesteś zarejestrowany</h4><div class="clear"></div>
+                <p style="color:#555555">Wpisz swój email i kliknij przycisk zatwierdź.Na podany email zostanie wysłana wiadomość
+                    z informacją o tym czy posiadasz już konto.</p><div class="clear"></div>
+                    <label for="email">Email:</label><input type="email" class="form-control" id="email" placeholder="Wpisz email" autocomplete="off">
+                    <button id="submit-btn" class="btn btn-danger">Zatwierdź</button>
+                    <div id="message-box" class="logIn-box" style="display: none">   
+                            <span id="errMessage">Wpisz swój email. </span>
+                        </div>
+               
+            </div>                     
+       </main>
+   </div>
+
+    
+ 
+</div>
+
+</body>
+</html>

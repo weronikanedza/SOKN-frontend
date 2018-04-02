@@ -69,6 +69,7 @@ a:link{
     background: #FFEBE8;
     border: 1px solid #D52727;
     color:#D52727;
+    border-radius: 5px;
 }
 
 #errMessage{

@@ -28,7 +28,11 @@
     border-radius:5px;
 }
 
-#errMessage{
+#message{
     position: relative;
     top:5px;
+}
+
+.checkIfRegistered{
+    margin-left: 20px;
 }

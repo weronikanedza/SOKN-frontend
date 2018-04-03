@@ -1,34 +1,83 @@
 @media (min-width: 992px) {
     #margin {
-        background: #343a40;
+        background: #59636dff;
         max-width: 250px;
         min-width: 250px;
         height: 100%;
-    }
-    footer.fixed-footer {
-        width: calc(100% - 250px);
-    }
-}
-
-@media (max-width: 992px) {
-    footer.fixed-footer {
-        width: 100%;
     }
 }
 
 #mainContent {
     padding-left: 5%;
-    padding-right: 15%;
+    padding-right: 13%;
+    background: white;
 }
 
-footer.fixed-footer {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    height: 56px;
-    background-color: #e9ecef;
-    line-height: 55px;
+footer{
+    background: #ADB5BD;
 }
 
-html,body { height:100%; }
+html,body {
+    height:100%;
+}
 
+html {
+    padding-left: 0;
+    padding-right: 0;
+    background: #EDEEF0;
+}
+
+body {
+    background: white;
+}
+
+@media (min-width: 1050px){
+    html {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+@media (min-width: 1400px){
+    html {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
+#mainNav {
+    background: #59636dff!important;
+}
+
+.nav-link-text{
+    color: #E7E9EB;
+}
+
+.banner{
+    /* The image used */
+    background-image: url("banner.PNG");
+
+    /* Set a specific height */
+    height: 25%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.banner-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.banner-text > h1 {
+    font-size: 70px;
+    font-family: "Book Antiqua";
+}

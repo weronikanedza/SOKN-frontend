@@ -74,16 +74,19 @@ body.fixed-nav {
   cursor: pointer;
 }
 
-#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
+/*#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse:after {*/
+  /*float: right;*/
+  /*content: '\f107';*/
+  /*font-family: 'FontAwesome';*/
+/*}*/
+
+/*#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse.collapsed:after {*/
+  /*content: '\f105';*/
+/*}*/
+
+.fa-ellipsis-h {
   float: right;
-  content: '\f107';
-  font-family: 'FontAwesome';
 }
-
-#mainNav .navbar-collapse .navbar-sidenav .nav-link-collapse.collapsed:after {
-  content: '\f105';
-}
-
 #mainNav .navbar-collapse .navbar-sidenav .sidenav-second-level,
 #mainNav .navbar-collapse .navbar-sidenav .sidenav-third-level {
   padding-left: 0;
@@ -159,6 +162,7 @@ body.fixed-nav {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-top: 56px;
+
   }
   #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
     width: 250px;

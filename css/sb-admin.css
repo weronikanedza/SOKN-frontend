@@ -42,7 +42,7 @@ body.fixed-nav {
 }
 
 .scroll-to-top:hover {
-  background: #343a40;
+  background: #59636dff;
 }
 
 .scroll-to-top i {
@@ -363,7 +363,7 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
 
 @media (min-width: 992px) {
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {
-    background: #343a40;
+    background: #59636dff;
   }
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {
     color: white !important;
@@ -374,9 +374,25 @@ body.sidenav-toggled .navbar-sidenav-tooltip.show {
   }
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-    background: #343a40;
+    background: #59636dff;
   }
 }
+/*@media (min-width: 992px) {*/
+  /*#mainNav.navbar-dark .navbar-collapse .navbar-sidenav {*/
+    /*background: #343a40;*/
+  /*}*/
+  /*#mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a {*/
+    /*color: white !important;*/
+    /*background-color: #495057;*/
+  /*}*/
+  /*#mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:focus, #mainNav.navbar-dark .navbar-collapse .navbar-sidenav li.active a:hover {*/
+    /*color: white;*/
+  /*}*/
+  /*#mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,*/
+  /*#mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {*/
+    /*background: #343a40;*/
+  /*}*/
+/*}*/
 
 #mainNav.navbar-light .navbar-collapse .navbar-sidenav .nav-link-collapse:after {
   color: rgba(0, 0, 0, 0.5);

@@ -1,0 +1,7 @@
+background of content: FFFFFF
+background of menu and margin: 59636D
+background of menu-hover: 707D8A
+text in menu: E7E9EB
+background of footer: ADB5BD
+background of html: EDEEF0
+

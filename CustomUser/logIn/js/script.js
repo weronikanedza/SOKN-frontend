@@ -19,16 +19,14 @@ $(document).ready(function(){
     var authority=dataObject.authority;
     var authorities=user.authorities;
     localStorage.setItem("token",dataObject.token); //save token in local memory
-    
+ 
     if(authorities.length>1)
     window.location.href="../../Reviewer/mainPageReviewer/index.html";
-    else if(authorities[0].role=="AUTHOR")
+    
+    if(authorities[0].role=="AUTHOR")
     window.location.href="../../Author/mainPageAuthor/index.html";
-    else window.location.href="../../Admin/mainPageAdmin/index.html";
-   // alert(dataObject[].user.authorities.role);
-    // switch(dataObject.authorities.role){
-
-    // }
+    else
+    window.location.href="../../Admin/mainPageAdmin/index.html";
   }
 
   function loginRejected(){

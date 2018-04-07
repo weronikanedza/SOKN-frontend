@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
         <div class="banner">
@@ -121,15 +122,20 @@
             <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
-                    <p> Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                    </p>
+                    <div class="checkIfRegistered">
+                        <h4>Sprawdź czy jesteś zarejestrowany</h4><div class="clear"></div>
+                        <p style="color:#555555">Wpisz swój email i kliknij przycisk zatwierdź. Na podany email zostanie wysłana wiadomość
+                            z informacją o tym czy posiadasz już konto.</p><div class="clear"></div>
+                        <form id="checkform" >
+                            <div class="form-group">
+                                <label for="email">Email:</label><input type="email" class="form-control" id="email" placeholder="Wpisz email" autocomplete="off">
+                                <button id="submit-btn" type="submit"class="btn btn-danger" style="margin-top: 20px;">Zatwierdź</button>
+                            </div>
+                        </form>
+                        <div id="message-box" class="logIn-box" style="display: none">
+                            <span id="message"></span>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>

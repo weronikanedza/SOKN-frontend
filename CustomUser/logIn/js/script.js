@@ -14,16 +14,13 @@ $(document).ready(function(){
   });
 
   function loginAccepted(data){
-    var dataObject=JSON.parse(data.responseText); 
-    var user=dataObject.user;
-    var authority=dataObject.authority;
-    var authorities=user.authorities;
+    var dataObject=JSON.parse(data.responseText);    
     localStorage.setItem("token",dataObject.token); //save token in local memory
- 
-    if(authorities.length>1)
+
+    if(dataObject.user.authorities.length>1)
     window.location.href="../../Reviewer/mainPageReviewer/index.html";
     
-    if(authorities[0].role=="AUTHOR")
+    if(dataObject.user.authorities[0].role=="AUTHOR")
     window.location.href="../../Author/mainPageAuthor/index.html";
     else
     window.location.href="../../Admin/mainPageAdmin/index.html";

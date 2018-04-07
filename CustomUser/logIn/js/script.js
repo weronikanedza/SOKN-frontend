@@ -14,9 +14,21 @@ $(document).ready(function(){
   });
 
   function loginAccepted(data){
-    var token=JSON.parse(data.responseText).token; 
-    localStorage.setItem("token",token); //save token in local memory
-    alert("Udało się zalogować")
+    var dataObject=JSON.parse(data.responseText); 
+    var user=dataObject.user;
+    var authority=dataObject.authority;
+    var authorities=user.authorities;
+    localStorage.setItem("token",dataObject.token); //save token in local memory
+    
+    if(authorities.length>1)
+    window.location.href="../../Reviewer/mainPageReviewer/index.html";
+    else if(authorities[0].role=="AUTHOR")
+    window.location.href="../../Author/mainPageAuthor/index.html";
+    else window.location.href="../../Admin/mainPageAdmin/index.html";
+   // alert(dataObject[].user.authorities.role);
+    // switch(dataObject.authorities.role){
+
+    // }
   }
 
   function loginRejected(){
@@ -35,9 +47,9 @@ $(document).ready(function(){
             headers : {
                 "content-type" : "application/json"
             },
-            url: "http://85.255.11.29:8080/login",
+            url: "http://localhost:8080/login",
             data: JSON.stringify(user),
-            complete: function(data, textStatus) {
+            complete: function(data) {
                 if(data.status==200) loginAccepted(data); //check response status
                 else loginRejected();
             }  ,

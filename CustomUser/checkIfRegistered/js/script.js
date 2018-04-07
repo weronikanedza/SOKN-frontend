@@ -15,7 +15,7 @@ $(document).ready(function(){
         headers : {
             "content-type" : "application/json"
         },
-        url: "http://85.255.11.29:8080/user/checkIfRegistered",
+        url: "http://localhost:8080/user/checkIfRegistered",
         data: email,
         complete: function(data) {
              if(data.status==200) pos_message(); //check response status

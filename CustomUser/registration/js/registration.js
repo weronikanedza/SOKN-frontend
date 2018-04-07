@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/user/register";
+const URL = "http://localhost:8080/CustomUser/user/register";
 
 $(document).ready(() => {
     $("#registration-form").submit(() => {

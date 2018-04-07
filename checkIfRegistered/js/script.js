@@ -5,7 +5,7 @@ $(document).ready(function(){
         if(email.length){ 
             post_data(email);
         }
-        empty_message(email.length);
+        else empty_message(email.length);
     });
 });
 

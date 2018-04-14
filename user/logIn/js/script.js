@@ -20,7 +20,7 @@ $(document).ready(function(){
     if(dataObject.user.authorities.length>1)
     window.location.href="../../Reviewer/mainPageReviewer/index.html";
     
-    if(dataObject.user.authorities[0].role=="AUTHOR")
+    if(dataObject.user.authorities[0].role==="AUTHOR")
     window.location.href="../../Author/mainPageAuthor/index.html";
     else
     window.location.href="../../Admin/mainPageAdmin/index.html";
@@ -42,10 +42,10 @@ $(document).ready(function(){
             headers : {
                 "content-type" : "application/json"
             },
-            url: "http://localhost:8080/login",
+            url: `${SERVER_URL}/login`,
             data: JSON.stringify(user),
             complete: function(data) {
-                if(data.status==200) loginAccepted(data); //check response status
+                if(data.status===200) loginAccepted(data); //check response status
                 else loginRejected();
             }  ,
             dataType: 'application/json'

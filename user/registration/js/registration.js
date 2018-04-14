@@ -1,21 +1,24 @@
-const URL = "http://localhost:8080/CustomUser/user/register";
-
 $(document).ready(() => {
     $("#registration-form").submit(() => {
         const user = {};
         user.firstName = $("#firstName").val();
         user.lastName = $("#lastName").val();
-        user.gender = $("#gender").val();
         user.email = $("#email").val();
-        user.degree = $("#degree").val();
         user.password = $("#password").val();
         user.matchingPassword = $("#matching-pwd").val();
+        user.gender = $("#gender").val();
+        user.degree = $("#degree").val();
+        user.affiliation = $("#affiliation").val();
+        user.city = $("#city").val();
+        user.zipCode = $("#zip_code").val();
+        user.country = $("#country_selector").val();
 
         if (user.gender === "Mężczyzna")
             user.gender = "MALE";
         else
             user.gender = "FEMALE";
 
+        $('#loading_gif').show();
         event.preventDefault();
         postData(user);
     });
@@ -23,13 +26,15 @@ $(document).ready(() => {
 
 function postData(body) {
 
-    fetch(URL, {
+    $('#loading_gif').show();
+    fetch(`${SERVER_URL}/user/register` , {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
             "content-type": "application/json"
         }
     }).then(response => {
+        $('#loading_gif').hide();
         if (response.status === 201) {
             userRegistered(response.json());
         } else {
@@ -50,7 +55,6 @@ function registrationFailed(response) {
         data.errors.forEach(element => {
             $("#message-box")
                 .html(`<span id="response-message">${element}</span>`)
-                .append('<br>')
                 .css("display", "block")
                 .css("background", "#FFEBE8");
         });

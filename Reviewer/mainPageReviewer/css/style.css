@@ -1,3 +1,4 @@
+
 @media (min-width: 992px) {
     #margin {
         background: #59636dff;
@@ -52,7 +53,9 @@ body {
 #mainNav {
     background: #59636dff!important;
 }
-
+#navbarLinks {
+    display: flex;
+}
 .nav-link-text{
     color: #E7E9EB;
 }

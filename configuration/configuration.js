@@ -1,4 +1,4 @@
-SERVER_URL = 'http://85.255.11.29:8080';
+window.SERVER_URL = 'http://localhost:8080';
 
 const queryParam = param => {
     let params = new URL(window.location.href).searchParams;

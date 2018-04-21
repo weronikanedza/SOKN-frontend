@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../../admin/main/css/sb-admin.css" rel="stylesheet">
+    <link href="../../../admin/main/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+          integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="../../../configuration/configuration.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/update.css"/>
+
+</head>
+<body>
+<div class="banner">
+    <div class="banner-text">
+        <h1>S O K N</h1>
+        <p>System organizacji konferencji naukowych</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
+    <a class="navbar-brand" href="../../../index.html">Strona Główna</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="navbarLinks">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-lock fa-lg"></i>
+                    <span class="nav-link-text">Zmień hasło</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../../../index.html" onclick="localStorage.removeItem('token')">
+                    <i class="fas fa-sign-out-alt fa-sm" style="padding-left: 7px"></i>
+                    <span class="nav-link-text">Wyloguj</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+    <div class="d-flex flex-row" style="height: 100%; min-height: 600px">
+        <div class="d-flex align-items-stretch" id="margin"></div>
+        <main class="d-flex align-items-stretch" id="mainContent">
+            <form id="passwordForm" class="regi stration-box">
+                <div class="form-group col-md-12">
+                    <label for="oldPassword">Stare hasło:</label>
+                    <input type="text" class="form-control" id="oldPassword"
+                           placeholder="Stare hasło" autocomplete="off" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="password">Hasło:</label>
+                    <input type="text" class="form-control" id="password"
+                           placeholder="Hasło" autocomplete="off" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="matchingPassword">Powtórz Hasło:</label>
+                    <input type="text" class="form-control" id="matchingPassword"
+                           placeholder="Hasło" autocomplete="off" required>
+                </div>
+
+                <button id="submitBtn" type="submit" class="btn btn-danger btn-block">Zaktualizuj hasło</button>
+                <div id="loadingGif" class="loading-gif" style="display: none; text-align: center; margin: 5px">
+                    <img src="../../../gif/loading.gif" class="loading-gif" width="100px">
+                </div>
+            </form>
+        </main>
+    </div>
+</div>
+
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="margin: 0 auto">
+                <h5 class="modal-title text-center" id="modalLabel">
+                    <strong>Gratulacje!</strong>
+                    <p>Aktualizacja hasła zakończyła się pomyślnie.</p>
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="text-center">
+            <small>Copyright © SOKN 2018</small>
+        </div>
+    </div>
+</footer>
+
+<script src="js/update.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-$('#redirect-btn').click(() => window.location.href='../../index.html');
+$('#redirectBtn').click(() => window.location.href='../../index.html');
 
 $.ajax({
     type: 'GET',
@@ -14,7 +14,8 @@ const showModal = () => $('#messageModal').modal({backdrop: 'static', keyboard: 
 
 const onFailedActivation = () => {
     showModal();
-    $('#modalLabel').empty();
-    $('#modalLabel').append('<strong>Niestety rejestracja nie powiodła się.</strong>')
+    const modalLabel = $('#modalLabel');
+    modalLabel.empty();
+    modalLabel.append('<strong>Niestety rejestracja nie powiodła się.</strong>')
 
 };

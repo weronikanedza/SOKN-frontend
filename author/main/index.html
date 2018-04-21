@@ -4,6 +4,9 @@
     <title>SOKN Prelegent</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../../configuration/configuration.js"></script>
+    <script src="js/author.js"></script>
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -55,7 +58,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="../../user/password/update/update.html">
                             <i class="fas fa-fw fa-lock fa-sm" style="width: 27px"></i>
                             <span class="nav-link-text">Zmień hasło</span>
                         </a>
@@ -123,7 +126,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="logIn/idx.html">
+                        <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
                             <i class="fas fa-fw fa-sign-out-alt" style="width: 27px"></i>
                             <span class="nav-link-text">Wyloguj</span>
                         </a>

@@ -5,6 +5,8 @@
     <title>Registration</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="../../configuration/configuration.js"></script>
+    <script src="../../js/redirect.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
           integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
@@ -12,18 +14,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <script src="../../configuration/configuration.js"></script>
     <link rel="stylesheet" href="country/css/countrySelect.min.css">
     <link rel="stylesheet" href="country/css/demo.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/registration.css"/>
 
 </head>
 <body>
-<form id="registration-form" class="registration-box">
+<form id="registrationForm" class="registration-box">
 
     <div class="form-group center-content">
         <a href="../../index.html">
-            <img src="../logIn/img/log.jpg" id="logIn-img" alt="register" height="50" width="50">
+            <img src="../login/img/log.jpg" id="logIn-img" alt="register" height="50" width="50">
         </a>
     </div>
     <br>
@@ -95,9 +96,9 @@
         <input id="country_selector" class="form-control" type="text">
     </div>
 
-    <button id="submit-btn" type="submit" class="btn btn-danger btn-block">Zarejestruj się</button>
+    <button id="submitBtn" type="submit" class="btn btn-danger btn-block">Zarejestruj się</button>
 
-    <div id="loading_gif" class="loading-gif" style="display: none">
+    <div id="loadingGif" class="loading-gif" style="display: none">
         <img src="../../gif/loading.gif" class="loading-gif" width="100px">
     </div>
     <div id="message-box" class="message-box" style="display:none"></div>

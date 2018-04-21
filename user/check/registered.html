@@ -4,15 +4,16 @@
     <title>SOKN</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="configuration/configuration.js"></script>
-    <script src="js/redirect.js"></script>
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../../configuration/configuration.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
         <div class="banner">
@@ -23,7 +24,7 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
-            <a class="navbar-brand" href="">Strona Główna</a>
+            <a class="navbar-brand" href="../../index.html">Strona Główna</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -66,7 +67,7 @@
                         </ul>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kontakt">
-                        <a class="nav-link" href="user/contact/send.html">
+                        <a class="nav-link" href="">
                             <i class="fas fa-fw fa-caret-right fa-lg"></i>
                             <span class="nav-link-text">Kontakt</span>
                         </a>
@@ -78,13 +79,13 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Wyszukaj konto">
-                        <a class="nav-link" href="user/check/registered.html">
+                        <a class="nav-link" href="#">
                             <i class="fas fa-fw fa-caret-right fa-lg"></i>
                             <span class="nav-link-text">Wyszukaj konto</span>
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zarejestruj się">
-                        <a class="nav-link" href="user/registration/registration.html">
+                        <a class="nav-link" href="../registration/registration.html">
                             <i class="fas fa-fw fa-caret-right fa-lg"></i>
                             <span class="nav-link-text">Zarejestruj się</span>
                         </a>
@@ -101,14 +102,8 @@
                             <span class="nav-link-text">Pomoc</span>
                         </a>
                     </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Newsletter">
-                        <a class="nav-link" href="user/mailing/mail.html">
-                            <i class="fas fa-fw fa-newspaper fa-sm" style="width: 27px"></i>
-                            <span class="nav-link-text">Newsletter</span>
-                        </a>
-                    </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
-                        <a class="nav-link" href="user/contact/send.html">
+                        <a class="nav-link" href="../contact/send.html">
                             <i class="fa fa-fw fa-envelope" style="width: 27px"></i>
                             <span class="nav-link-text">Napisz do nas</span>
                         </a>
@@ -116,7 +111,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="user/login/login.html">
+                        <a class="nav-link" href="../login/login.html">
                             <i class="fas fa-sign-in-alt" style="width: 27px"></i>
                             <span class="nav-link-text">Zaloguj</span>
                         </a>
@@ -129,15 +124,21 @@
             <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
-                    <p> Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                    </p>
+                    <div class="checkIfRegistered" >
+                        <h4 style="margin-left:15px">Sprawdź czy jesteś zarejestrowany</h4><div class="clear"></div>
+                        <p style="color:#555555;margin-left:15px">Wpisz swój email i kliknij przycisk zatwierdź. Na podany email zostanie wysłana wiadomość
+                            z informacją o tym czy posiadasz już konto.
+                        </p><div class="clear"></div>
+                        <form id="checkform" >
+                            <div class="form-group">
+                                <label for="email">Email:</label><input type="email" class="form-control" id="email" placeholder="Wpisz email" autocomplete="off" style="width:500px">
+                                <button id="submit-btn" type="submit"class="btn btn-danger" style="margin-top: 20px;">Zatwierdź</button>
+                            </div>
+                        </form>
+                        <div id="message-box" class="logIn-box" style="display: none">
+                            <span id="message"></span>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>

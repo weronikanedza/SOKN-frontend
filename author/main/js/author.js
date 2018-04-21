@@ -6,5 +6,6 @@ if (token == null) {
     const details = parseJwt(token);
 
     const contains = details.authorities.find(a => a.authority === 'AUTHOR');
-    if (!contains) window.location.replace('../../index.html');
+    if (!contains || details.authorities.length > 1)
+        window.location.replace('../../index.html');
 }

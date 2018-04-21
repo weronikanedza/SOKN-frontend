@@ -1,4 +1,4 @@
-$('#redirectBtn').click(() => window.location.href='../../index.html');
+$('#redirectBtn').click(() => window.location.replace('../../index.html'));
 
 $.ajax({
     type: 'GET',

@@ -9,8 +9,19 @@ function postData(dataToSend,urlEnd){
         complete: function(data) {
             completePostBody(data);
         }  ,
-        dataType: 'application/json'
+        dataType: "application/json"
     });
 }
 
+function getData(urlEnd){
+    $.ajax({
+        type: "GET",
+        cache: false,
+        url: `${SERVER_URL}/`+urlEnd,
+        complete: function(data) {  
+         completeGetBody(data);
+        },
+        dataType: "application/json"
+    });
+  }
 

@@ -4,18 +4,16 @@
     <title>SOKN Prelegent</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../main/css/sb-admin.css">
-    <link rel="stylesheet" href="../main/css/style.css">
+
+    <script src="../../configuration/configuration.js"></script>
+    <script src="js/author.js"></script>
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/stylesheet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="../../configuration/configuration.js"></script>
-    <script src="../../functions/ajaxFunctions.js"></script>
-    <script src="../../functions/messages.js"></script>
-    <script src="script/script.js"></script>
 </head>
 <body>
         <div class="banner">
@@ -40,7 +38,7 @@
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseMulti1" data-parent="#navbarLinks">
                             <li>
-                                <a class="nav-link" href="addArticle.html">
+                                <a class="nav-link" href="../addArticle/addArticle.html">
                                     <i class="fas fa-fw fa-plus fa-sm" style="width: 27px"></i>
                                     <span class="nav-link-text">Dodaj artykuł</span>
                                 </a>
@@ -60,7 +58,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="../../user/password/update/update.html">
                             <i class="fas fa-fw fa-lock fa-sm" style="width: 27px"></i>
                             <span class="nav-link-text">Zmień hasło</span>
                         </a>
@@ -120,7 +118,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="../../user/contact/send.html">
                             <i class="fa fa-fw fa-envelope" style="width: 27px"></i>
                             <span class="nav-link-text">Napisz do nas</span>
                         </a>
@@ -128,7 +126,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')" >
+                        <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
                             <i class="fas fa-fw fa-sign-out-alt" style="width: 27px"></i>
                             <span class="nav-link-text">Wyloguj</span>
                         </a>
@@ -141,29 +139,14 @@
             <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
-                        <form id="addArticleForm" class="logIn-box">
-                                <div class="form-group">
-                                    <label for="subject">Temat artykułu:</label>
-                                    <input required type="text" class="form-control" id="subject" placeholder="Wpisz temat artykułu" autocomplete="off">
-                                 </div>
-                                 <div class="form-group">
-                                    <label for="selectpicker">Dziedzina:</label>
-                                    <select class="form-control" id="selectpicker"></select>
-                                </div>
-                                    <div class="clear"></div>
-                                <div class="form-group" style="width: 75%">
-                                     <label for="file">Plik:</label>
-                                     <input required type="text" class="form-control" id="file" placeholder="Dodaj ścieżkę pliku" autocomplete="off">   
-                                </div>
-                                <label for="find"></label>
-                                <button type="find" id="find" class="btn btn-secondary">Znajdź plik</button>  
-                                    
-                                <div class="clear"></div>
-                                <button type="submit" id="submit" class="btn btn-danger">Wyślij</button> 
-                                <div id="message-box" class="logIn-box" style="display: none">
-                                        <span id="message"></span>
-                                </div>
-                        </form>
+                    <p> Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
+                    </p>
                 </main>
             </div>
         </div>

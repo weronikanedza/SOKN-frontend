@@ -5,6 +5,7 @@ $(document).ready(function(){
 function completeGetBody(data){
     if(data.status==200 && JSON.parse(data.responseText).length>0){
         setSelect(data);
+        readyToPost();
     }else if(data.status==200){
         showMessage("Brak dziedzin");
     }else{
@@ -19,5 +20,11 @@ function setSelect(data){
             value: dataObject.id,
             text: dataObject.field
         }));
+    });
+}
+
+function readyToPost(){
+    $("#addArticleForm").submit(function() {
+    
     });
 }

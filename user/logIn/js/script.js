@@ -19,10 +19,10 @@ $(document).ready(function(){
     localStorage.setItem("token",dataObject.token); //save token in local memory
 
     if(dataObject.user.authorities.length>1)
-    window.location.href="../../Reviewer/mainPageReviewer/index.html";
+    window.location.href="../../Reviewer/main/index.html";
     
     if(dataObject.user.authorities[0].role==="AUTHOR")
-    window.location.href="../../Author/mainPageAuthor/index.html";
+    window.location.href="../../Author/main/index.html";
     else
-    window.location.href="../../Admin/mainPageAdmin/index.html";
+    window.location.href="../../Admin/main/index.html";
   }

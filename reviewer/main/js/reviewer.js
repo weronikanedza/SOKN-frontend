@@ -1,6 +1,7 @@
 let token = localStorage.getItem('token');
 
-if (token == null) {
+if (token == null || !isValidToken(parseJwt(token))) {
+    localStorage.removeItem('token');
     window.location.replace('../../index.html')
 } else {
     const details = parseJwt(token);

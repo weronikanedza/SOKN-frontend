@@ -1,6 +1,8 @@
 let token = localStorage.getItem('token');
 
-if (token != null) {
+if (token == null || !isValidToken(parseJwt(token))) {
+    localStorage.removeItem('token');
+} else {
     const details = parseJwt(token);
 
     const authorities = details.authorities;

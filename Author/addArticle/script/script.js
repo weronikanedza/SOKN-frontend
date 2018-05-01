@@ -25,6 +25,24 @@ function setSelect(data){
 
 function readyToPost(){
     $("#addArticleForm").submit(function() {
-    
+        event.preventDefault();
+        if($('input[name="file"]').val()){
+            postDataWithFile(prepareData(),"article/uploadArticle");
+        }else{
+            showMessage("Nie wybrano pliku");
+        }
     });
+}
+
+function completePostBody(data){
+    alert(data.status);
+    $('#submit').attr("disabled", true);
+}
+
+function prepareData(){
+    const formData=new FormData();
+    formData.append('file',$('input[name="file"]').get(0).files[0]);
+    formData.append('subject',$('#subject').val());
+    formData.append('fieldOfArticle',$('#selectpicker').val());
+    return formData;
 }

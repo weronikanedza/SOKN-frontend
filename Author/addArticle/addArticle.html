@@ -144,11 +144,11 @@
                         <form id="addArticleForm" class="logIn-box">
                                 <div class="form-group">
                                     <label for="subject">Temat artykułu:</label>
-                                    <input required type="text" class="form-control" id="subject" placeholder="Wpisz temat artykułu" autocomplete="off">
+                                    <input required type="text" class="form-control" id="subject" placeholder="Wpisz temat artykułu" name="subject" autocomplete="off">
                                  </div>
                                  <div class="form-group">
                                     <label for="selectpicker">Dziedzina:</label>
-                                    <select class="form-control" id="selectpicker"></select>
+                                    <select class="form-control" id="selectpicker" name="fieldOfArticle"></select>
                                 </div>
                                     <div class="clear"></div>
                                 <div class="form-group" style="width: 75%">
@@ -156,8 +156,8 @@
                                     </div>     
                                 <div class="clear"></div>
                                 <button type="submit" id="submit" class="btn btn-danger">Wyślij</button> 
-                                <div id="message-box" class="logIn-box" style="display: none">
-                                        <span id="message"></span>
+                                <div id="message-box" class="logIn-box" style="display:none">
+                                    <span id="errMessage"></span>
                                 </div>
                         </form>
                 </main>

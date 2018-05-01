@@ -21,6 +21,20 @@
 }
 
 #submit{
-    width: 75%;
+    width: 100%;
 }
 
+#message-box{
+    margin-top:10px;
+    height: 40px;
+    text-align: center;
+    background: #FFEBE8;
+    border: 1px solid #D52727;
+    color:#D52727;
+    border-radius: 5px;
+}
+
+#errMessage{
+    position: relative;
+    top:5px;
+}

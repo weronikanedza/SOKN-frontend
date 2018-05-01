@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="../../configuration/configuration.js"></script>
+    <script src="../../js/redirect.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+          integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="country/css/countrySelect.min.css">
+    <link rel="stylesheet" href="country/css/demo.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/registration.css"/>
+
+</head>
+<body>
+<form id="registrationForm" class="registration-box">
+
+    <div class="form-group center-content">
+        <a href="../../index.html">
+            <img src="../login/img/log.jpg" id="logIn-img" alt="register" height="50" width="50">
+        </a>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="firstName">Imię:</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Imię" required value="Imie">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lastName">Nazwisko:</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Nazwisko" required value="Nazwisko">
+        </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Email" required value="testowy@mail.eu">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="password">Hasło:</label>
+            <input type="password" class="form-control" id="password" placeholder="Wpisz hasło" required
+                   value="pass">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="matching-pwd">Powtórz hasło:</label>
+            <input type="password" class="form-control" id="matching-pwd" placeholder="Wpisz ponownie hasło"
+                   required value="pas">
+        </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="gender">Płeć:</label>
+        <select id="gender" class="form-control">
+            <option selected>Mężczyzna</option>
+            <option>Kobieta</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="degree">Tytuł naukowy:</label>
+            <select id="degree" class="form-control" required>
+                <option selected>Profesor</option>
+                <option>Doktor</option>
+                <option>Magister</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="affiliation">Stan cywilny:</label>
+            <select id="affiliation" class="form-control">
+                <option selected>Kawaler / Panna</option>
+                <option>Żonaty / Zamężna</option>
+                <option>Wdowiec / Wdowa</option>
+                <option>Rozwiedzony / Rozwiedziona</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="degree">Miasto: </label>
+            <input type="text" class="form-control" id="city" placeholder="Miasto" required value="Kraków">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="degree">Kod pocztowy</label>
+            <input type="text" pattern="[0-9]{2}-[0-9]{3}" required id="zip_code" class="form-control"
+                   placeholder="Kod pocztowy" value="31-111">
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="country_selector">Kraj: </label>
+        <input id="country_selector" class="form-control" type="text">
+    </div>
+
+    <button id="submitBtn" type="submit" class="btn btn-danger btn-block">Zarejestruj się</button>
+
+    <div id="loadingGif" class="loading-gif" style="display: none">
+        <img src="../../gif/loading.gif" class="loading-gif" width="100px">
+    </div>
+    <div id="message-box" class="message-box" style="display:none"></div>
+</form>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="country/js/countrySelect.min.js"></script>
+<script>
+    $("#country_selector").countrySelect({
+        defaultCountry: "pl",
+        preferredCountries: ['pl', 'gb', 'us']
+    });
+</script>
+<script src="js/registration.js"></script>
+</body>
+</html>

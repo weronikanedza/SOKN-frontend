@@ -1,0 +1,26 @@
+.form-group{
+    width: 100%;
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+#addArticleForm{
+    width: 80%;
+}
+
+#find{
+    margin-top:6%;
+    float: right;
+}
+
+#mainContent{
+    width: 100%;
+}
+
+#submit{
+    width: 75%;
+}
+

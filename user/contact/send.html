@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>SOKN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../../configuration/configuration.js"></script>
+    <script src="js/sendEmail.js"></script>
+</head>
+<body>
+        <div class="banner">
+            <div class="banner-text">
+                <h1>S O K N</h1>
+                <p>System organizacji konferencji naukowych</p>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
+            <a class="navbar-brand" href="../../index.html">Strona Główna</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav navbar-sidenav" id="navbarLinks" >
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="O Konferencji">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">O Konferencji</span>
+                            <i class="fas fa-fw fa-ellipsis-h"></i>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="collapseMulti"  data-parent="#navbarLinks">
+                            <li>
+                                <a class="nav-link" href="">
+                                    <i class="fas fa-fw fa-caret-right fa-sm"></i>
+                                    <span class="nav-link-text">Program</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="">
+                                    <i class="fas fa-fw fa-caret-right fa-sm"></i>
+                                    <span class="nav-link-text">Komitet</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">
+                                    <i class="fas fa-fw fa-caret-right fa-sm"></i>
+                                    <span class="nav-link-text">Poprzednie lata</span>
+                                    <i class="fas fa-fw fa-ellipsis-h"></i>
+                                </a>
+                                <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                                    <li>
+                                        <a class="nav-link" href="#">
+                                            <i class="fas fa-fw fa-caret-right fa-sm"></i>
+                                            <span class="nav-link-text">Konferencja 2017</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kontakt">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">Kontakt</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Płatności">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">Płatności</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Wyszukaj konto">
+                        <a class="nav-link" href="../check/registered.html">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">Wyszukaj konto</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zarejestruj się">
+                        <a class="nav-link" href="../registration/registration.html">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">Zarejestruj się</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zresetuj hasło">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">Zresetuj hasło</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pomoc">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                            <span class="nav-link-text">Pomoc</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
+                        <a class="nav-link" href="">
+                            <i class="fa fa-fw fa-envelope" style="width: 27px"></i>
+                            <span class="nav-link-text">Napisz do nas</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../login/login.html">
+                            <i class="fas fa-sign-in-alt" style="width: 27px"></i>
+                            <span class="nav-link-text">Zaloguj</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+            <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
+                <div class="d-flex align-items-stretch" id="margin"></div>
+                <main class="d-flex align-items-stretch" id="mainContent">
+                    <div class="checkIfRegistered" >
+                        <h4 style="margin-left:15px">Skontaktuj się z organizatorami</h4><div class="clear"></div>
+                        <p style="color:#555555;margin-left:15px">Wpisz swój email, temat oraz treść wiadomości i kliknij przycisk wyślij. Twoja wiadomość zostanie wysłana do organizatorów.
+                        </p><div class="clear"></div>
+                        <form id="checkform" >
+                            <div class="form-group">
+                                <label for="email">Email:</label><input type="email" class="form-control" id="email" placeholder="Wpisz email" autocomplete="off" style="width:500px">
+								<label for="email">Temat:</label><input type="text" class="form-control" id="subject" placeholder="Wpisz temat" autocomplete="off" style="width:500px">
+								<label for="email">Wiadomość:</label><textarea class="form-control" id="message" placeholder="Wiadomość" autocomplete="off" style="width:500px"></textarea> 
+                                <button id="submit-btn" type="submit"class="btn btn-danger" style="margin-top: 20px;">Wyślij</button>
+                            </div>
+                        </form>
+                        <div id="message-box" class="logIn-box" style="display: none">
+                            <span id="message"></span>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>Copyright © SOKN 2018</small>
+                </div>
+            </div>
+    </footer>
+
+</body>
+</html>

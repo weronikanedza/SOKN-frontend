@@ -3,27 +3,18 @@ $(document).ready(function(){
         event.preventDefault();
        var email=$('#email').val();     
         if(email.length){ 
-            post_data(email);
+            postData(email,"user/checkIfRegistered");
         }
         else empty_message(email.length);
     });
 });
 
-  function post_data(email){
-    $.ajax({
-        type: "POST",
-        headers : {
-            "content-type" : "application/json"
-        },
-        url: `${SERVER_URL}/user/checkIfRegistered`,
-        data: email,
-        complete: function(data) {
-             if(data.status==200) pos_message(); //check response status
-             else err_message();
-        }  ,
-        dataType: 'application/json'
-    });
+function completePostBody(data){
+    if(data.status==200) pos_message(); //check response status
+    else err_message();
+    $('#submit-btn').attr('disabled',true);
 }
+  
 function pos_message(){
     $('#message').html('Email został wysłany').css("color","#6AA730");
     $('#message-box').css("display","block").css("background","#C5F9A7").css("border","1px solid #6AA730");

@@ -5,6 +5,9 @@ label{
     margin-left:15px;
 }
 
+.checkIfRegistered{
+    width: 100%;
+}
 .form-control{
     margin-left:15px;
     width: 90%;
@@ -21,7 +24,7 @@ a:link{
 #submit-btn{
     position:relative;
     left:px;
-    width: 270px;
+    width: 80%;
 }
 
 #message-box{

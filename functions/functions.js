@@ -7,3 +7,10 @@ function setSelect(data){
         }));
     });
 }
+
+function checkSpecialCharacters(text){
+    alert("checkSpeci");
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if(format.test(text)) return true;
+    else return false;
+}

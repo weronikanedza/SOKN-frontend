@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../../configuration/configuration.js"></script>
     <script src="js/admin.js"></script>
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../../css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
                 <p>System organizacji konferencji naukowych</p>
             </div>
         </div>
-
+        
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
             <a class="navbar-brand" href="">Strona Główna</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +36,25 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dodaj recenzenta">
-                        <a class="nav-link" href="">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
                             <i class="fas fa-fw fa-user-plus fa-lg"></i>
                             <span class="nav-link-text">Dodaj recenzenta</span>
+                            <i class="fas fa-fw fa-ellipsis-h"></i>
                         </a>
+                        <ul class="sidenav-second-level collapse" id="collapseMulti"  data-parent="#navbarLinks">
+                            <li>
+                                <a class="nav-link" href="../addReviewer/account.html">
+                                    <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                                    <span class="nav-link-text">Stwórz konto</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="">
+                                    <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                                    <span class="nav-link-text">Dodaj uprwnienia</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dokonane płatności">
                         <a class="nav-link" href="">

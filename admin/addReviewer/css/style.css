@@ -1,0 +1,37 @@
+body{
+    margin: 0px;
+}
+
+#response-message {
+    position: relative;
+}
+
+.form-row {
+    margin: 0 10px 0 10px;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.btn-block {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.message-box {
+    background: #FFFF;
+    border: 1px solid #D8DEE2;
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+    height:auto;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto 0;
+}
+
+.loading-gif {
+    text-align: center;
+    margin: 5px auto;
+}

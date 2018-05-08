@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     getData("/fieldsOfArticles/getAll");
 });
@@ -26,17 +27,14 @@ function setSelect(data){
 function readyToPost(){
     $("#addArticleForm").submit(function() {
         event.preventDefault();
-        if($('input[name="file"]').val()){
+        if(checkData()){
             postDataWithFile(prepareData(),"article/uploadArticle");
-        }else{
-            showMessage("Nie wybrano pliku");
         }
     });
 }
 
 function completePostBody(data){
-    alert(data.status);
-    $('#submit').attr("disabled", true);
+    responseAction(data,"Artykuł został dodany");
 }
 
 function prepareData(){
@@ -46,3 +44,44 @@ function prepareData(){
     formData.append('fieldOfArticle',$('#selectpicker').val());
     return formData;
 }
+
+function responseAction(data,text){
+    switch(data.status){
+        case 200 :
+            showAcceptedMessage(text);
+            $('#submit').attr("disabled", true);
+            break;
+        case 406 :
+            const err=JSON.parse(data.responseText);
+            showMessage(err.errors);
+            break;
+        default:
+            showMessage("Wystąpiły błędy.Spróbuj ponownie poźniej");
+            break;
+    }
+}
+
+function showMessage(text){
+    $('#errMessage').html( text);
+    $('#message-box').css("display","block");
+}
+
+function showAcceptedMessage(text){
+    $('#errMessage').html(text).css("color","#6AA730");
+    $('#message-box').css("display","block").css("background","#C5F9A7").css("border","1px solid #6AA730");
+}
+
+function checkData(){
+    if(!$('input[name="file"]').val()){
+        showMessage("Brak pliku");
+        return false;
+    }
+
+    if($('#subject').text().length>50){
+        showMessage("Temat artykułu może zawierać maksymalnie 50 znaków");
+        return false;
+    }
+
+    return true;
+}
+

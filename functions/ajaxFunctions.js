@@ -12,6 +12,22 @@ function postData(dataToSend,urlEnd){
         dataType: "application/json"
     });
 }
+
+function postDataWithToken(dataToSend,urlEnd){
+    $.ajax({
+        type: 'POST',
+        headers : {
+            "Authorization": `Bearer ${localStorage.getItem('token')}`,
+            "content-type" : "application/json"
+        },
+        url: `${SERVER_URL}/`+urlEnd,
+        data: dataToSend,
+        complete: function(data) {
+            completePostBody(data);
+        }  ,
+        dataType: "application/json"
+    });
+}
 function postDataWithFile(dataToSend,urlEnd){
     $.ajax({
         type: 'POST',
@@ -38,4 +54,4 @@ function getData(urlEnd){
         dataType: "application/json"
     });
   }
-
+  

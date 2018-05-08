@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 function completeGetBody(data){
     if(data.status==200 && JSON.parse(data.responseText).length>0){
-        setSelect(data);
+        addFieldsToSelects(data);
     }else if(data.status==200){
         showMessage("Brak dziedzin");
     }else{
@@ -12,27 +12,27 @@ function completeGetBody(data){
     }
 }
 
-function setSelect(data){
-    const dataObject=JSON.parse(data.responseText);
+function setSelect(selector, dataObject){
+    
     $.each(dataObject, function (i, dataObject) {
-        $('#selectpicker1').append($('<option>', {
+        $(selector).append($('<option>', {
             value: dataObject.id,
             text: dataObject.field
         }));
     });
+}
 
+function addFieldsToSelects(data){
+    const dataObject=JSON.parse(data.responseText);
+    
+    setSelect('#selectpicker1', dataObject);
+    //second field is optional so second select need  
     $('#selectpicker2').append($('<option>', {
         value: 0,
         text: "Brak"
     }));
     
-    $.each(dataObject, function (i, dataObject) {
-        $('#selectpicker2').append($('<option>', {
-            value: dataObject.id,
-            text: dataObject.field
-        }));
-    });
-    
+    setSelect('#selectpicker2', dataObject);
 }
 
 $(document).ready(function () {
@@ -59,7 +59,7 @@ $(document).ready(function () {
             else
                 user.gender = "FEMALE";
             
-            // if second field was selected and it's not the same as first then add another filed 
+            // if second field was selected and it's not the same as first then add this field 
             if($("#selectpicker2").val() != 0 && $("#selectpicker2").val() != $("#selectpicker1").val()){
                 user.fieldOfArticles.push({id:$("#selectpicker2").val(),
                     field:$("#selectpicker2").find('option:selected').text()})
@@ -67,6 +67,7 @@ $(document).ready(function () {
             
             event.preventDefault();
             $('#loadingGif').show();
+            $('#message-box').css("display", "none");
             postDataWithToken(JSON.stringify(user), "/user/registerReviewer");
          });
 });

@@ -45,6 +45,20 @@ function prepareData(){
     return formData;
 }
 
+function checkData(){
+    if(!$('input[name="file"]').val()){
+        showMessage("Brak pliku");
+        return false;
+    }
+
+    if($('#subject').text().length>50){
+        showMessage("Temat artykułu może zawierać maksymalnie 50 znaków");
+        return false;
+    }
+
+    return true;
+}
+
 function responseAction(data,text){
     switch(data.status){
         case 200 :
@@ -60,28 +74,3 @@ function responseAction(data,text){
             break;
     }
 }
-
-function showMessage(text){
-    $('#errMessage').html( text);
-    $('#message-box').css("display","block");
-}
-
-function showAcceptedMessage(text){
-    $('#errMessage').html(text).css("color","#6AA730");
-    $('#message-box').css("display","block").css("background","#C5F9A7").css("border","1px solid #6AA730");
-}
-
-function checkData(){
-    if(!$('input[name="file"]').val()){
-        showMessage("Brak pliku");
-        return false;
-    }
-
-    if($('#subject').text().length>50){
-        showMessage("Temat artykułu może zawierać maksymalnie 50 znaków");
-        return false;
-    }
-
-    return true;
-}
-

@@ -4,15 +4,18 @@
     <title>SOKN Prelegent</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../main/css/sb-admin.css">
+    <link rel="stylesheet" href="../main/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <script src="../../configuration/configuration.js"></script>
-    <script src="js/author.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="../../functions/messages.js"></script>
+    <script src="../../functions/ajaxFunctions.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="../../configuration/configuration.js"></script>
+    <script src="script/script.js"></script>
 </head>
 <body>
         <div class="banner">
@@ -43,7 +46,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../viewArticles/viewArticles.html">
+                                <a class="nav-link" href="viewArticles.html">
                                     <i class="fas fa-fw fa-file-alt fa-sm" style="width: 27px"></i>
                                     <span class="nav-link-text">Moje artykuły</span>
                                 </a>
@@ -57,7 +60,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
-                        <a class="nav-link" href="../../user/password/update/update.html">
+                        <a class="nav-link" href="">
                             <i class="fas fa-fw fa-lock fa-sm" style="width: 27px"></i>
                             <span class="nav-link-text">Zmień hasło</span>
                         </a>
@@ -117,7 +120,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
-                        <a class="nav-link" href="../../user/contact/send.html">
+                        <a class="nav-link" href="">
                             <i class="fa fa-fw fa-envelope" style="width: 27px"></i>
                             <span class="nav-link-text">Napisz do nas</span>
                         </a>
@@ -125,7 +128,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
+                        <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')" >
                             <i class="fas fa-fw fa-sign-out-alt" style="width: 27px"></i>
                             <span class="nav-link-text">Wyloguj</span>
                         </a>
@@ -138,14 +141,25 @@
             <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
-                    <p> Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                    </p>
+                        <form id="addArticleForm" class="logIn-box">
+                                <div class="form-group">
+                                    <label for="subject">Temat artykułu:</label>
+                                    <input required type="text" class="form-control" id="subject" placeholder="Wpisz temat artykułu" name="subject" autocomplete="off">
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="selectpicker">Dziedzina:</label>
+                                    <select class="form-control" id="selectpicker" name="fieldOfArticle"></select>
+                                </div>
+                                    <div class="clear"></div>
+                                <div class="form-group" style="width: 75%">
+                                     <input type="file" name="file" id="file" class="inputfile">   
+                                    </div>     
+                                <div class="clear"></div>
+                                <button type="submit" id="submit" class="btn btn-danger">Wyślij</button> 
+                                <div id="message-box" class="logIn-box" style="display:none">
+                                    <span id="errMessage"></span>
+                                </div>
+                        </form>
                 </main>
             </div>
         </div>

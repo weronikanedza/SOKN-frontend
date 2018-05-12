@@ -6,18 +6,3 @@ function showMessage(text){
     $('#errMessage').html( text);
     $('#message-box').css("display","block");
 }
-function responseAction(data,text){
-    switch(data.status){
-        case 200 :
-            showAcceptedMessage(text);
-            $('#submit').attr("disabled", true);
-            break;
-        case 406 :
-            const err=JSON.parse(data.responseText);
-            showMessage(err.errors);
-            break;
-        default:
-            showMessage("Wystąpiły błędy.Spróbuj ponownie poźniej");
-            break;
-    }
-}

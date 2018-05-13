@@ -1,4 +1,9 @@
-
+#table{
+    width: 100%;
+}
+.pre-scrollable{
+    width:100%;
+}
 #mainContent{
     width: 100%;
 }

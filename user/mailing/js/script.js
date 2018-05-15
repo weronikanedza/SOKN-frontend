@@ -10,7 +10,7 @@ $(document).ready(function(){
         event.preventDefault();
 
         if(maiingList.email){
-            postData("mailingList/subscribe",maiingList, messageSubscribed);
+            postData("/mailingList/subscribe",maiingList, messageSubscribed);
         }
         else emptyMessage();
     });
@@ -23,7 +23,7 @@ $(document).ready(function(){
         event.preventDefault();
 
         if(maiingList.email){
-            postData("mailingList/unsubscribe", maiingList, messageUnsubscribed);
+            postData("/mailingList/unsubscribe", maiingList, messageUnsubscribed);
         }
         else emptyMessage();
     });
@@ -36,7 +36,7 @@ $(document).ready(function(){
         event.preventDefault();
 
         if(maiingList.email){
-            postData("mailingList/checkIfSubscribe", maiingList, null);
+            postData("/mailingList/checkIfSubscribe", maiingList, null);
         }
         else emptyMessage();
     });
@@ -46,11 +46,11 @@ function postData(path, body, message){
         $.ajax({
             type: "POST",
             headers: {"content-type": "application/json"},
-            url: ${SERVER_URL} + path,
+            url: `${SERVER_URL}`+path,
             dataType: 'application/json',
             data: JSON.stringify(body),
             complete: function (response) {
-                responseJson= JSON.parse(response.responseText);
+                responseJson = JSON.parse(response.responseText);
                 if (response.status == 200) {
                     if (message == null)
                         checkIfSubMessage(responseJson.message);

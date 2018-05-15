@@ -26,7 +26,8 @@ function addFieldsToSelects(data){
     const dataObject=JSON.parse(data.responseText);
     
     setSelect('#selectpicker1', dataObject);
-    //second field is optional so second select need  
+    
+    //second field is optional so second select need  empty field
     $('#selectpicker2').append($('<option>', {
         value: 0,
         text: "Brak"

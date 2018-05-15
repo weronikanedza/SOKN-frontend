@@ -5,12 +5,8 @@ label{
     margin-left:15px;
 }
 
-.form-group{
-    border-bottom: 1px solid #D8DEE2
-}
 .form-control{
-    margin-left:auto;
-    margin-right: auto;
+    margin-left:15px;
     width: 90%;
 }
 
@@ -18,14 +14,19 @@ label{
     background: #FFFF;
     border: 1px solid #D8DEE2;
     font-family: Arial, Helvetica, sans-serif;
-    width:25%;
-    height:40%;
+    width:300px;
+    height:300px;
     border-radius: 5px;
-    margin:5% auto 0 auto;
+    margin:100px auto 0 auto;
 }
 
-#submitBtn{
-    margin:0px auto 20px auto;
+.submit-button{
+    background: firebrick;
+    color: white;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    margin-left:70px;
 }
 
 .clear{
@@ -33,10 +34,8 @@ label{
 }
 
 #logIn-img{
-    margin: 20px auto 20px auto;
-    display: block;
+    margin:20px 0px 0px 125px; 
 }
-
 #resetPsw{
     float:right;
     margin-right: 15px;
@@ -64,8 +63,10 @@ a:link{
 }
 
 #message-box{
+    margin-left:15px;
     margin-top:10px;
-    height: 40px;
+    height: 35px;
+    width: 500px;
     text-align: center;
     background: #FFEBE8;
     border: 1px solid #D52727;
@@ -73,7 +74,7 @@ a:link{
     border-radius: 5px;
 }
 
-#errMessage{
+#message{
     position: relative;
-    top:10px;
+    top:5px;
 }

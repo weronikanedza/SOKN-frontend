@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $("#registration-form").submit(() => {
+    $("#registrationForm").submit(() => {
         const user = {};
         user.firstName = $("#firstName").val();
         user.lastName = $("#lastName").val();
@@ -18,7 +18,6 @@ $(document).ready(() => {
         else
             user.gender = "FEMALE";
 
-        $('#loading_gif').show();
         event.preventDefault();
         postData(user);
     });
@@ -26,7 +25,7 @@ $(document).ready(() => {
 
 function postData(body) {
 
-    $('#loading_gif').show();
+    $('#loadingGif').show();
     fetch(`${SERVER_URL}/user/register` , {
         method: "POST",
         body: JSON.stringify(body),
@@ -34,16 +33,16 @@ function postData(body) {
             "content-type": "application/json"
         }
     }).then(response => {
-        $('#loading_gif').hide();
+        $('#loadingGif').hide();
         if (response.status === 201) {
-            userRegistered(response.json());
+            userRegistered();
         } else {
             registrationFailed(response.json());
         }
     });
 }
 
-function userRegistered(response) {
+function userRegistered() {
     $("#message-box")
         .html(`<span id="response-message">Potwierdź rejestrację poprzez kliknięcie w link wysłany na Twój adres email!</span>`)
         .css("display", "block")

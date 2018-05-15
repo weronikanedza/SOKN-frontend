@@ -1,0 +1,49 @@
+ body{
+    background: #F9F9F9;
+}
+label{
+    margin-left:15px;
+}
+
+.checkIfRegistered{
+    width: 100%;
+}
+.form-control{
+    margin-left:15px;
+    width: 90%;
+}
+
+.clear{
+    clear: both;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+#submit-btn{
+    position:relative;
+    left:px;
+    width: 80%;
+}
+
+#message-box{
+    margin-left:15px;
+    margin-top:10px;
+    height: 35px;
+    width: 500px;
+    text-align: center;
+    background: #FFEBE8;
+    border: 1px solid #D52727;
+    color:#D52727;
+    border-radius: 5px;
+}
+
+#submit-btn{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+#message{
+    position: relative;
+    top:5px;
+} 

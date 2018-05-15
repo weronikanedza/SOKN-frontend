@@ -1,12 +1,5 @@
-.registration-box {
-    background: #FFFF;
-    border: 1px solid #D8DEE2;
-    font-family: Arial, Helvetica, sans-serif;
-    width:600px;
-    height:auto;
-    padding: 25px;
-    border-radius: 5px;
-    margin:50px auto 50px auto;
+body{
+    margin: 0px;
 }
 
 #response-message {
@@ -41,12 +34,4 @@
 .loading-gif {
     text-align: center;
     margin: 5px auto;
-}
-
-.modal-title {
-    margin: 0 auto;
-}
-
-.btn {
-    background: #59636dff;
 }

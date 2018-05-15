@@ -93,6 +93,3 @@ body {
 .ml-auto>li>a:hover {
     background: #59636dff!important;
 }
-.panel-default>.panel-heading>.panel-title>a {
-    color: #59636D;
-}

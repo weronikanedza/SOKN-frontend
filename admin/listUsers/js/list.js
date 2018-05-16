@@ -33,6 +33,7 @@ const onSuccess = (data) => {
 			html += '<td> <b> Kraj </b></td>';
 			html += '<td> <b> Stan </b></td>';
 			html += '<td> <b> Role </b></td>';
+			html += '<td> <b> Dziedziny </b></td>';
 			html += '</tr>';
 			for (i=0; i<count ; i++){
 				html += '<tr>';
@@ -55,7 +56,25 @@ const onSuccess = (data) => {
 					
 					
 				}
-				if (key != "password" && key != "authorities" ){
+				
+				if (key == "fieldOfArticles")
+				{
+					var tmp="";
+					for (k=0; k<Object.keys(dataObject[i].fieldOfArticles).length; k++)
+					{
+						tmp += "&#x2022 " + value[k].field+ "<br/>";
+					}
+					
+					if (i%2 == 0){
+						html += '<td>' + tmp + '</td>';
+					}
+					else{
+						html += '<td bgcolor=#E8E8E8>' + tmp + '</td>';
+					}
+					
+					
+				}
+				if (key != "password" && key != "authorities" && key != "fieldOfArticles" ){
 					if (i%2 == 0){
 						html += '<td >' + value + '</td>';
 					}

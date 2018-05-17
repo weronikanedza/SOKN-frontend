@@ -13,6 +13,21 @@ function postData(dataToSend,urlEnd){
     });
 }
 
+function postParamWithToken(dataToSend,urlEnd){
+    $.ajax({
+        type: 'POST',
+        headers : {
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
+        url: `${SERVER_URL}/`+urlEnd,
+        data: dataToSend,
+        complete: function(data) {
+            completePostBody(data);
+        }  ,
+        dataType: "application/json"
+    });
+}
+
 function postDataWithToken(dataToSend,urlEnd){
     $.ajax({
         type: 'POST',

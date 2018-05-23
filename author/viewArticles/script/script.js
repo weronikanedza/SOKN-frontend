@@ -16,11 +16,16 @@ function completeGetBody(data){
 
 function fillTable(data){
     var dataObject=JSON.parse(data.responseText);
-    alert("1 : "+dataObject[0].subject+"2 :"+dataObject[0].fieldOfArticle.field+"3 :")
+    
      for(i=0;i<dataObject.length;i++){
          $("#table").append("<tr><td>"+dataObject[i].subject+"</td><td>"+dataObject[i].fieldOfArticle.field+
-        "</td><td>plik</td><td>status</td><td>uwagi</td></tr>");
+        "</td><td>plik</td><td>checkStatus(dataObject[i].gradeStatus)</td><td>uwagi</td></tr>");
     }
+ }
+
+ function checkStatus(status){
+     if(status>=2) return "zaakceptowany";
+     else return "w trakcie";
  }
 
  function getDataAsUser(urlEnd){

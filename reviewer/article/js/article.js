@@ -25,13 +25,13 @@ const onSuccessRetrieve = response => {
 
     let counter = 0;
     response.forEach(article => {
+
             $("#table-body").append(
                 `<tr>
                  <th scope="row">${++counter}</th>
                  <td>${article.subject}</td>
                  <td>${article.fieldOfArticle.field}</td>
                  <td>${article.user.firstName}</td>
-                 <td>${article.gradeStatus}</td>
                  <td><button class="btn" onclick="downloadFile('${article.pathFile}')">Pobierz</button></td>
              </tr>`
             );

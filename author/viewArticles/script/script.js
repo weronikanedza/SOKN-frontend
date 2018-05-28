@@ -1,6 +1,6 @@
 
  document.addEventListener("DOMContentLoaded", function(event) {
-    getDataAsUser("/article/getAllArticles");
+    getDataAsUser("/getAllArticles");
 });
 
 function completeGetBody(data){
@@ -32,7 +32,7 @@ function fillTable(data){
  function removeUser(chosenRow){
     const cells = chosenRow.closest("tr").children("td"); //get table row
     if(confirm("Czy chcesz usunąć artykuł?")){
-    postDataWithToken($(cells.eq(0)).attr('id'),"article/removeArticle");
+    postDataWithToken($(cells.eq(0)).attr('id'),"/removeArticle");
     location.reload();
     }
   }

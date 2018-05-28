@@ -19,11 +19,16 @@ function fillTable(data){
     
      for(i=0;i<dataObject.length;i++){
          $("#table").append("<tr><td id="+dataObject[i].id+">"+dataObject[i].subject+"</td><td>"+dataObject[i].fieldOfArticle.field+
-        "</td><td>"+checkStatus(dataObject[i].articleGrade)+"</td><td><a href='comments.html'>uwagi</a></td>"+
+        "</td><td>"+checkStatus(dataObject[i].articleGrade)+"</td><td><button class='btn-warning' onclick='getComments($(this))'>uwagi</button></td>"+
         "<td><button class='btn-danger' onclick ='removeUser($(this))'>remove</button></td></tr>");
     }
  }
 
+ function getComments(chosenRow){
+    const cells = chosenRow.closest("tr").children("td"); //get table row
+    sessionStorage.setItem('articleId',cells.eq(0).attr('id'));
+    window.location.href="comments.html";
+ }
  function removeUser(chosenRow){
     const cells = chosenRow.closest("tr").children("td"); //get table row
     if(confirm("Czy chcesz usunąć artykuł?")){

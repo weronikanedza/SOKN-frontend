@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>SOKN Administrator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="../main/js/admin.js"></script>
+    <link rel="stylesheet" href="../../user/registration/country/css/countrySelect.min.css">
+    <link rel="stylesheet" href="../../user/registration/country/css/demo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../../configuration/configuration.js"></script>
+    <script src="../../functions/ajaxFunctions.js"></script>
+    <script src="js/account.js"></script>
+    <script src="js/fieldSelectors.js"></script>
+    
+</head>
+<body>
+        <div class="banner">
+            <div class="banner-text">
+                <h1>S O K N</h1>
+                <p>System organizacji konferencji naukowych</p>
+            </div>
+        </div>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
+            <a class="navbar-brand" href="">Strona Główna</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav navbar-sidenav" id="navbarLinks" >
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Użytkownicy">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-users fa-lg"></i>
+                            <span class="nav-link-text">Użytkownicy</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dodaj recenzenta">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+                            <i class="fas fa-fw fa-user-plus fa-lg"></i>
+                            <span class="nav-link-text">Dodaj recenzenta</span>
+                            <i class="fas fa-fw fa-ellipsis-h"></i>
+                        </a>
+                        <ul class="sidenav-second-level collapse" id="collapseMulti"  data-parent="#navbarLinks">
+                            <li>
+                                <a class="nav-link" href="account.html">
+                                    <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                                    <span class="nav-link-text">Stwórz konto</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="authority.html">
+                                    <i class="fas fa-fw fa-caret-right fa-lg"></i>
+                                    <span class="nav-link-text">Dodaj uprwnienia</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dokonane płatności">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-hand-holding-usd fa-lg"></i>
+                            <span class="nav-link-text">Dokonane płatności</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
+                        <a class="nav-link" href="../../user/password/update/update.html">
+                            <i class="fas fa-fw fa-lock fa-lg"></i>
+                            <span class="nav-link-text">Zmień hasło</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
+                            <i class="fas fa-sign-out-alt fa-sm" style="padding-left: 7px"></i>
+                            <span class="nav-link-text">Wyloguj</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid" style="height: 100%; padding-left: 0; padding-right: 0; padding-top: 4%;">
+            <div class="d-flex flex-row" style="height: 100%; min-height: 600px">
+                <div class="d-flex align-items-stretch" id="margin"></div>
+                <main class="d-flex align-items-stretch" id="mainContent">
+                    <form id="registrationForm" class="registration-box">
+                        <h2>Zarejestruj konto recenzenta</h2>
+                        <a>Wypełnienij poniższe pola i następnie kliknij przycisk zarejestruj. Jeśli pola zostały wypełnione poprawnie a użytkonik nie istnieje w bazie zosatnie utworzone konto recenzenta. Użytkownik otrzyma wygenerowane hasło na podany adres emial.</a>
+                        <br>
+                        <br/>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">Imię:</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Imię" required >
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Nazwisko:</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Nazwisko" required >
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required >
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="gender">Płeć:</label>
+                            <select id="gender" class="form-control">
+                                <option selected>Mężczyzna</option>
+                                <option>Kobieta</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="degree">Tytuł naukowy:</label>
+                                <select id="degree" class="form-control" required>
+                                    <option selected>Profesor</option>
+                                    <option>Doktor</option>
+                                    <option>Magister</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="affiliation">Stan cywilny:</label>
+                                <select id="affiliation" class="form-control">
+                                    <option selected>Kawaler / Panna</option>
+                                    <option>Zonaty / Zamezna</option>
+                                    <option>Wdowiec / Wdowa</option>
+                                    <option>Rozwiedzony / Rozwiedziona</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                                <label for="degree">Miasto: </label>
+                                <input type="text" class="form-control" id="city" placeholder="Miasto" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="degree">Kod pocztowy</label>
+                                <input type="text" pattern="[0-9]{2}-[0-9]{3}" required id="zip_code" class="form-control" placeholder="Kod pocztowy">
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="country_selector">Kraj: </label>
+                            <input id="country_selector" class="form-control" type="text">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <div class="form-group">
+                                    <label for="selectpicker1">Dziedzina:</label>
+                                    <select class="form-control" id="selectpicker1" name="fieldOfArticle"></select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group">
+                                    <label for="selectpicker2">Dodatkowa dziedzina:</label>
+                                    <select class="form-control" id="selectpicker2" name="fieldOfArticle"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="submitBtn" type="submit" class="btn btn-danger btn-block" style="margin-bottom: 4%;">Zarejestruj</button>
+
+                        <div id="loadingGif" class="loading-gif" style="display: none">
+                            <img src="../../gif/loading.gif" class="loading-gif" width="100px">
+                        </div>
+                        
+                        <div id="message-box" class="message-box" style="display:none">
+                            <span id="message"></span>
+                        </div>
+                    </form>
+                </main>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>Copyright © SOKN 2018</small>
+                </div>
+            </div>
+    </footer>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../../user/registration/country/js/countrySelect.min.js"></script>
+        <script>
+            $("#country_selector").countrySelect({
+                defaultCountry: "pl",
+                preferredCountries: ['pl', 'gb', 'us']
+            });
+        </script>
+</body>
+</html>

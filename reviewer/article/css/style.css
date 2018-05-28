@@ -1,0 +1,103 @@
+
+@media (min-width: 992px) {
+    #margin {
+        background: #59636dff;
+        max-width: 250px;
+        min-width: 250px;
+        height: available;
+    }
+}
+
+#mainContent {
+    padding-left: 5%;
+    padding-right: 13%;
+    background: white;
+}
+
+footer{
+    background: #ADB5BD;
+    position: center;
+    bottom: 0;
+
+}
+
+html,body {
+    height: available;
+}
+
+html {
+    padding-left: 0;
+    padding-right: 0;
+    background: #EDEEF0;
+}
+
+body {
+    background: white;
+    overflow: auto;
+}
+
+@media (min-width: 1050px){
+    html {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+@media (min-width: 1400px){
+    html {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
+#mainNav {
+    background: #59636dff!important;
+}
+#navbarLinks {
+    display: flex;
+}
+.nav-link-text{
+    color: #E7E9EB;
+}
+
+.banner{
+    /* The image used */
+    background-image: url("banner.PNG");
+
+    /* Set a specific height */
+    height: 300px;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.banner-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.banner-text > h1 {
+    font-size: 70px;
+    font-family: "Book Antiqua";
+}
+
+.nav-link:hover{
+    background: #707d8aff;
+}
+
+.ml-auto>li>a:hover {
+    background: #59636dff!important;
+}
+
+.btn {
+    background-color: #59636dff;
+    color: white;
+}

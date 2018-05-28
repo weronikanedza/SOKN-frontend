@@ -28,7 +28,7 @@ function getDataAsUser(urlEnd){
     });
 }
 
-function postDataWithFile(dataToSend,urlEnd){
+function postDataAsUser(dataToSend,urlEnd){
     $.ajax({
         type: 'POST',
         headers: {

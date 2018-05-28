@@ -1,14 +1,14 @@
 
-$(document).ready(function(){
+ document.addEventListener("DOMContentLoaded", function(event) {
     getDataAsUser("/article/getAllArticles");
 });
 
 function completeGetBody(data){
-    if(data.status==200 && JSON.parse(data.responseText).length>0){     
+    if(data.status==200 && JSON.parse(data.responseText).length>0){  
+        $("#scrollTable").css('display','block');   
         fillTable(data);
     }else if(data.status==200){
         $("#message").html("<h1>Brak dodanych artykułów</h1>")
-        $("pre-scrollable").css("display:none");
     }else{
         $("#message").html("<h1>Wystąpił błąd. Spróbuj ponownie<h1>");
     }
@@ -18,14 +18,26 @@ function fillTable(data){
     var dataObject=JSON.parse(data.responseText);
     
      for(i=0;i<dataObject.length;i++){
-         $("#table").append("<tr><td>"+dataObject[i].subject+"</td><td>"+dataObject[i].fieldOfArticle.field+
-        "</td><td>plik</td><td>checkStatus(dataObject[i].gradeStatus)</td><td>uwagi</td></tr>");
+         $("#table").append("<tr><td id="+dataObject[i].id+">"+dataObject[i].subject+"</td><td>"+dataObject[i].fieldOfArticle.field+
+        "</td><td>"+checkStatus(dataObject[i].articleGrade)+"</td><td><a href='comments.html'>uwagi</a></td>"+
+        "<td><button class='btn-danger' onclick ='removeUser($(this))'>remove</button></td></tr>");
     }
  }
 
- function checkStatus(status){
-     if(status>=2) return "zaakceptowany";
-     else return "w trakcie";
+ function removeUser(chosenRow){
+    const cells = chosenRow.closest("tr").children("td"); //get table row
+    if(confirm("Czy chcesz usunąć artykuł?")){
+    postDataAsUser($(cells.eq(0)).attr('id'),"article/removeArticle");
+    location.reload();
+    }
+  }
+
+ function checkStatus(grade){
+    let sum=grade.positive+grade.negative+grade.neutral;
+    console.log(sum);
+    if(sum===3 && grade.positive==2) return "zaakceptowany";
+    else if(sum<3) return "w trakcie oceny";
+     else return "odrzucony";
  }
 
  function getDataAsUser(urlEnd){
@@ -42,3 +54,5 @@ function fillTable(data){
         dataType: "application/json"
     });
 }
+
+

@@ -12,7 +12,23 @@ function postData(dataToSend,urlEnd){
         dataType: "application/json"
     });
 }
-function postDataWithFile(dataToSend,urlEnd){
+
+function getDataAsUser(urlEnd){
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        headers : {
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
+        url: `${SERVER_URL}/`+urlEnd,
+        complete: function(data) {
+            completeGetBody(data);
+        }  ,
+        dataType: "application/json"
+    });
+}
+
+function postDataAsUser(dataToSend,urlEnd){
     $.ajax({
         type: 'POST',
         headers: {

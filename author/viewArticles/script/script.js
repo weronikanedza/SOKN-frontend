@@ -32,7 +32,7 @@ function fillTable(data){
  function removeUser(chosenRow){
     const cells = chosenRow.closest("tr").children("td"); //get table row
     if(confirm("Czy chcesz usunąć artykuł?")){
-    postDataAsUser($(cells.eq(0)).attr('id'),"article/removeArticle");
+    postDataWithToken($(cells.eq(0)).attr('id'),"article/removeArticle");
     location.reload();
     }
   }

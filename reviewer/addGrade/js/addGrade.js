@@ -9,9 +9,11 @@ $(document).ready(() => {
         data.articleId = localStorage.getItem("articleId");
         data.comment = $("#comment").val();
         let grade = $("#grade").val();
-        alert(data.comment);
+
+        event.preventDefault();
+
         if (grade == -2)
-            showMessage("Nie wybrano oceny dla artykułu.");
+            showErrorMessage("Nie wybrano oceny dla artykułu.");
         else {
             data.partGrade = grade;
             postParamWithToken(data, "/updateArticleGrade");
@@ -21,16 +23,17 @@ $(document).ready(() => {
 });
 
 function completePostBody(response) {
-    alert("ive got the response");
-    alert(response.status);
     if (response.status == 200) {
-        alert("i did it")
         $("#submit").attr("disabled", true);
-        showMessage("Ocena została zapisana w bazie.");
+        showAcceptedMessage("Ocena została zapisana w bazie.");
+    }
+    if (response.status == 500) {
+        $("#submit").attr("disabled", true);
+        showAcceptedMessage("Błąd serwera, spróbuj ponownie pożniej");
     }
     else {
         const err = JSON.parse(response.responseText);
-        showMessage(err.errors);
+        showErrorMessage(err.errors);
     }
         
 }

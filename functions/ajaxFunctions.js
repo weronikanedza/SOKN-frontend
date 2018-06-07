@@ -71,4 +71,18 @@ function getData(urlEnd) {
         dataType: "application/json"
     });
 }
-  
+
+function getDataWithToken(urlEnd) {
+    $.ajax({
+        type: "GET",
+        headers: {
+            "Authorization": `Bearer ${localStorage.getItem('token')}`
+        },
+        cache: false,
+        url: `${SERVER_URL}/` + urlEnd,
+        complete: function (data) {
+            completeGetBody(data);
+        },
+        dataType: "application/json"
+    });
+}

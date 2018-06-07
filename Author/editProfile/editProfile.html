@@ -12,10 +12,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <script src="../../configuration/configuration.js"></script>
-    <script src="../main/js/reviewer.js"></script>
+    <!--<script src="../main/js/reviewer.js"></script>-->
+    <link rel="stylesheet" href="../../user/registration/country/css/countrySelect.min.css">
+    <link rel="stylesheet" href="../../user/registration/country/css/demo.css">
     <script src="../../functions/messages.js"></script>
     <script src="../../functions/ajaxFunctions.js"></script>
-    <script src="js/addGrade.js"></script>
+    <script src="js/editProfile.js"></script>
     <link href="../../css/sb-admin.css" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
@@ -38,27 +40,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="navbarLinks">
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Recenzenta">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti0">
-                    <i class="fas fa-fw fa-paperclip fa-sm" style="width: 27px;"></i>
-                    <span class="nav-link-text">Panel Recenzenta</span>
-                    <i class="fas fa-fw fa-ellipsis-h"></i>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseMulti0" data-parent="#navbarLinks">
-                    <li>
-                        <a class="nav-link" href="../article/article.html">
-                            <i class="far fa-fw fa-paper-plane fa-sm" style="width: 27px;"></i>
-                            <span class="nav-link-text">Przydzielone artykuły</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="">
-                            <i class="fas fa-fw fa-clipboard-list fa-sm" style="width: 27px;"></i>
-                            <span class="nav-link-text">W trakcie recenzji</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Prelegenta">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti1">
                     <i class="fas fa-fw fa-pencil-alt fa-sm" style="width: 27px;"></i>
@@ -164,42 +145,112 @@
     </div>
 </nav>
 
-<div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
-    <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
-        <div class="d-flex align-items-stretch" id="margin"></div>
-        <main class="d-flex align-items-stretch" id="mainContent">
-            <form id="grade-form" class="grade-form" style="width: 500px">
-                <h2><span id="article_title"></span></h2>
-                <a>Wybierz ocene dla artykułu a następnie uzasadnij swój wybór poprzez wpisanie komentarza. Aby zapisać ocene kliknij przycisk zatwierdź.</a>
-                <div class="form-group col-md-6">
-                    <label for="grade">Ocena:</label> 
-                    <select id="grade" class="form-control" required>
-                        <option selected value="-2" >Nie wybrano</option>
-                        <option value="-1" >Negatywna</option>
-                        <option value="0" >Neutralna</option>
-                        <option value="1" >Pozytywna</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-12 ">
-                    <label for="comment">Komentarz:</label>
-                    <textarea class="form-control" rows="4" id="comment" placeholder="Wpisz komentarz" required></textarea>
-                </div>
-                <button id="submit" type="submit" class="btn btn-danger btn-block" style="margin-bottom: 4%;">Zatwierdź</button>
-                <div id="message-box" style="display:none">
-                    <span id="errMessage"></span>
-                </div>
-                <a class="nav-link-text" href="../article/article.html" style="margin-left: 35%;margin-top: 10px; color: blue">Powrót do artykułów</a>
-            </form>
-        </main>
-    </div>
-</div>
+    <div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+        <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
+            <div class="d-flex align-items-stretch" id="margin"></div>
+            <main class="d-flex align-items-stretch" id="mainContent">
+                <form id="user-form">
+                    <h2>Twoje dane</h2>
+                    <br>
+                    <br/>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">Imię:</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Imię" required >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Nazwisko:</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Nazwisko" required >
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required >
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="gender">Płeć:</label>
+                        <select id="gender" class="form-control">
+                            <option selected>Mężczyzna</option>
+                            <option>Kobieta</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="degree">Tytuł naukowy:</label>
+                            <select id="degree" class="form-control" required>
+                                <option selected>Profesor</option>
+                                <option>Doktor</option>
+                                <option>Magister</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="affiliation">Stan cywilny:</label>
+                            <select id="affiliation" class="form-control">
+                                <option selected>Kawaler / Panna</option>
+                                <option>Żonaty / Zamężna</option>
+                                <option>Wdowiec / Wdowa</option>
+                                <option>Rozwiedzony / Rozwiedziona</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="degree">Miasto: </label>
+                            <input type="text" class="form-control" id="city" placeholder="Miasto" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="zip_code">Kod pocztowy</label>
+                            <input type="text" pattern="[0-9]{2}-[0-9]{3}" required id="zip_code" class="form-control" placeholder="Kod pocztowy">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="country_selector">Kraj: </label>
+                        <input id="country_selector" class="form-control" type="text">
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-danger btn-block" style="margin-bottom: 4%;">Zapisz</button>
 
-<footer class="footer">
-    <div class="container">
-        <div class="text-center">
-            <small>Copyright © SOKN 2018</small>
+                    <div id="loadingGif" class="loading-gif" style="display: none">
+                        <img src="../../gif/loading.gif" class="loading-gif" width="100px">
+                    </div>
+
+                    <div id="message-box" class="message-box" style="display:none">
+                        <span id="errMessage"></span>
+                    </div>
+                </form>
+            </main>
         </div>
     </div>
-</footer>
+    
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="margin: 0 auto">
+                    <h5 class="modal-title text-center" id="modalLabel">
+                        <strong>Zmiana adresu email</strong>
+                        <p>Adres email jest jednoczesnie loginem. Musisz zostać wylogowany.</p>
+                        <button id="btnSuccess" class="btn btn-danger"
+                                onclick="window.location.replace('../../../index.html')">Strona główna</button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © SOKN 2018</small>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../../user/registration/country/js/countrySelect.min.js"></script>
+    <script>
+        $("#country_selector").countrySelect({
+            defaultCountry: "pl",
+            preferredCountries: ['pl', 'gb', 'us']
+        });
+    </script>
 </body>
 </html>

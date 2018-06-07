@@ -18,6 +18,9 @@ $(document).ready(() => {
         else
             user.gender = "FEMALE";
 
+        if (user.affiliation === "Żonaty / Zamężna")
+            user.affiliation = "Zonaty / Zamezna";
+
         event.preventDefault();
         postData(user);
     });

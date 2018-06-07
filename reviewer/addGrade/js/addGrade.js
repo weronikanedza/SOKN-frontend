@@ -2,6 +2,11 @@ $(() => {
     $('#article_title').html("Ocena artykułu: " + localStorage.getItem("articleSubject"));
 });
 
+function showGreenMessage(text){
+    $('#errMessage').html(text).css("color","#6AA730");
+    $('#message-box').css("display","block").css("background","#C5F9A7").css("border","1px solid #6AA730");
+}
+
 $(document).ready(() => {
     $("#grade-form").submit(() => {
 
@@ -25,11 +30,11 @@ $(document).ready(() => {
 function completePostBody(response) {
     if (response.status == 200) {
         $("#submit").attr("disabled", true);
-        showAcceptedMessage("Ocena została zapisana w bazie.");
+        showMessage("Ocena została zapisana w bazie.");
     }
     if (response.status == 500) {
         $("#submit").attr("disabled", true);
-        showAcceptedMessage("Błąd serwera, spróbuj ponownie pożniej");
+        showErrorMessage("Błąd serwera, spróbuj ponownie pożniej");
     }
     else {
         const err = JSON.parse(response.responseText);
@@ -38,5 +43,3 @@ function completePostBody(response) {
         
 }
 
-
-// dalczego dostaje 0 i nie moge uzyc funkcji do wyswietlania wiadomosci xd

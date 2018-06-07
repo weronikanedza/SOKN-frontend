@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+}
+
+.clear{
+    clear: both;
+}
+
+#mainContent{
+    width: 100%;
+}
+
+#submit{
+    width: 100%;
+}
+
+#message-box{
+    margin-top:10px;
+    height: 40px;
+    text-align: center;
+    background: #C5F9A7;
+    border: 1px solid #6AA730;
+    color:#6AA730;
+    border-radius: 5px;
+}
+
+#errMessage{
+    position: relative;
+    top:5px;
+}
+
+form {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height:auto;
+    margin:50px auto 50px auto;
+}
+
+.form-row {
+    margin: 0 10px 0 10px;
+}
+
+.loading-gif {
+    text-align: center;
+    margin: 5px auto;
+}

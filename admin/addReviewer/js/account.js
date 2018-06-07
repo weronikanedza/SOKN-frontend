@@ -22,6 +22,10 @@ $(document).ready(function () {
             else
                 user.gender = "FEMALE";
             
+            if (user.affiliation === Żonaty / Zamężna) 
+                user.affiliation = "Zonaty / Zamezna";
+            
+            
             // if second field was selected and it's not the same as first then add this field 
             if($("#selectpicker2").val() != 0 && $("#selectpicker2").val() != $("#selectpicker1").val()){
                 user.fieldOfArticles.push({id:$("#selectpicker2").val(),

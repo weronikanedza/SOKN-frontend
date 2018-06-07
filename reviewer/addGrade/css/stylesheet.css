@@ -1,0 +1,40 @@
+.form-group{
+    width: 100%;
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+#addArticleForm{
+    width: 80%;
+}
+
+#find{
+    margin-top:6%;
+    float: right;
+}
+
+#mainContent{
+    width: 100%;
+}
+
+#submit{
+    width: 100%;
+}
+
+#message-box{
+    margin-top:10px;
+    height: 40px;
+    text-align: center;
+    background: #C5F9A7;
+    border: 1px solid #6AA730;
+    color:#6AA730;
+    border-radius: 5px;
+}
+
+#errMessage{
+    position: relative;
+    top:5px;
+}

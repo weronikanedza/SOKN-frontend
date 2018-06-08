@@ -5,14 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../../configuration/configuration.js"></script>
-    <script src="js/admin.js"></script>
     <link href="../../css/sb-admin.css" rel="stylesheet">
-    <link href="../../css/style.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/wenzhixin/bootstrap-table/master/dist/bootstrap-table.min.js"></script>
+	<script src="../main/js/admin.js"></script>
+	<script src="js/list.js"></script>
 </head>
 <body>
         <div class="banner">
@@ -30,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav" id="navbarLinks" >
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Użytkownicy">
-                        <a class="nav-link" href="../listUsers/index.html">
+                        <a class="nav-link" href="">
                             <i class="fas fa-fw fa-users fa-lg"></i>
                             <span class="nav-link-text">Użytkownicy</span>
                         </a>
@@ -49,7 +51,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../addReviewer/authority.html">
+                                <a class="nav-link" href="">
                                     <i class="fas fa-fw fa-caret-right fa-lg"></i>
                                     <span class="nav-link-text">Dodaj uprwnienia</span>
                                 </a>
@@ -84,13 +86,8 @@
             <div class="d-flex flex-row" style="height: 100%; min-height: 600px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
-                    <p> Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                    </p>
+                   <div class="container" id="table" >
+					</div>
                 </main>
             </div>
         </div>

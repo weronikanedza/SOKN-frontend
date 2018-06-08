@@ -19,6 +19,7 @@
     <script src="../../configuration/configuration.js"></script>
     <script src="../../functions/ajaxFunctions.js"></script>
     <script src="js/account.js"></script>
+    <script src="js/fieldSelectors.js"></script>
     
 </head>
 <body>
@@ -50,13 +51,13 @@
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseMulti"  data-parent="#navbarLinks">
                             <li>
-                                <a class="nav-link" href="../addReviewer/account.html">
+                                <a class="nav-link" href="account.html">
                                     <i class="fas fa-fw fa-caret-right fa-lg"></i>
                                     <span class="nav-link-text">Stwórz konto</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="authority.html">
                                     <i class="fas fa-fw fa-caret-right fa-lg"></i>
                                     <span class="nav-link-text">Dodaj uprwnienia</span>
                                 </a>
@@ -87,7 +88,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+        <div class="container-fluid" style="height: 100%; padding-left: 0; padding-right: 0; padding-top: 4%;">
             <div class="d-flex flex-row" style="height: 100%; min-height: 600px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
@@ -130,7 +131,7 @@
                                 <label for="affiliation">Stan cywilny:</label>
                                 <select id="affiliation" class="form-control">
                                     <option selected>Kawaler / Panna</option>
-                                    <option>Zonaty / Zamezna</option>
+                                    <option>Żonaty / Zamężna</option>
                                     <option>Wdowiec / Wdowa</option>
                                     <option>Rozwiedzony / Rozwiedziona</option>
                                 </select>
@@ -142,7 +143,7 @@
                                 <input type="text" class="form-control" id="city" placeholder="Miasto" required>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="degree">Kod pocztowy</label>
+                                <label for="zip_code">Kod pocztowy</label>
                                 <input type="text" pattern="[0-9]{2}-[0-9]{3}" required id="zip_code" class="form-control" placeholder="Kod pocztowy">
                             </div>
                         </div>

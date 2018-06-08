@@ -74,7 +74,7 @@ const onSuccess = (data) => {
 					
 					
 				}
-				if (key != "password" && key != "authorities" && key != "fieldOfArticles" ){
+				if (key != "password" && key != "authorities" && key != "fieldOfArticles" && key != "zipCode" ){
 					if (i%2 == 0){
 						html += '<td >' + value + '</td>';
 					}
@@ -101,8 +101,5 @@ const onSuccess = (data) => {
 
 const onFailed = () => {
     alert("Wystąpił błąd! Spróbuj ponownie pózniej!");
-	
-
-
 };
 });

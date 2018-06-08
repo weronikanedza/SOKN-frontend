@@ -4,8 +4,6 @@
     <title>SOKN Administrator</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../../configuration/configuration.js"></script>
-    <script src="js/admin.js"></script>
     <link href="../../css/sb-admin.css" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -13,6 +11,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="../main/js/admin.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../../configuration/configuration.js"></script>
+    <script src="../../functions/ajaxFunctions.js"></script>
+    <script src="js/authority.js"></script>
+    <script src="js/fieldSelectors.js"></script>
+    
 </head>
 <body>
         <div class="banner">
@@ -30,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav" id="navbarLinks" >
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Użytkownicy">
-                        <a class="nav-link" href="../listUsers/index.html">
+                        <a class="nav-link" href="">
                             <i class="fas fa-fw fa-users fa-lg"></i>
                             <span class="nav-link-text">Użytkownicy</span>
                         </a>
@@ -43,13 +49,13 @@
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseMulti"  data-parent="#navbarLinks">
                             <li>
-                                <a class="nav-link" href="../addReviewer/account.html">
+                                <a class="nav-link" href="account.html">
                                     <i class="fas fa-fw fa-caret-right fa-lg"></i>
                                     <span class="nav-link-text">Stwórz konto</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../addReviewer/authority.html">
+                                <a class="nav-link" href="authority.html">
                                     <i class="fas fa-fw fa-caret-right fa-lg"></i>
                                     <span class="nav-link-text">Dodaj uprwnienia</span>
                                 </a>
@@ -80,17 +86,47 @@
             </div>
         </nav>
 
-        <div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+        <div class="container-fluid" style="height: 100%; padding-left: 0; padding-right: 0; padding-top: 4%;">
             <div class="d-flex flex-row" style="height: 100%; min-height: 600px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
-                    <p> Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                        Some text. Some text. Some text. Some text. Some text. Some text. Some text. Some text.
-                    </p>
+                    <form id="addAuthority" class="addAuthority-box">
+                        <h2>Przydzil uprawnienia recenzenta</h2>
+                        <a>Poniżej wprowadź adress email użytkownika, który ma otrzymać uprawnienia recenzenta. 
+                            Następnie wybierz dziedziny naukowe jakie powinny być przypisane do tego użytkownika. 
+                            Po wykonaniu tych czynności kliknij przycisk przydziel uprawnienia.</a>
+                        <br>
+                        <br/>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="email">Adres email:</label>
+                                <input type="text" class="form-control" id="email" placeholder="Email" required >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <div class="form-group">
+                                    <label for="selectpicker1">Dziedzina:</label>
+                                    <select class="form-control" id="selectpicker1" name="fieldOfArticle"></select>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-group">
+                                    <label for="selectpicker2">Dodatkowa dziedzina:</label>
+                                    <select class="form-control" id="selectpicker2" name="fieldOfArticle"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="submitBtn" type="submit" class="btn btn-danger btn-block" style="margin-bottom: 4%;">Przydziel uprawnienia</button>
+
+                        <div id="loadingGif" class="loading-gif" style="display: none">
+                            <img src="../../gif/loading.gif" class="loading-gif" width="100px">
+                        </div>
+                        
+                        <div id="message-box" class="message-box" style="display:none">
+                            <span id="message"></span>
+                        </div>
+                    </form>
                 </main>
             </div>
         </div>
@@ -102,6 +138,5 @@
                 </div>
             </div>
     </footer>
-
 </body>
 </html>

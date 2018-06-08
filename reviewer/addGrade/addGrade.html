@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>SOKN Recenzent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="../../configuration/configuration.js"></script>
+    <script src="../main/js/reviewer.js"></script>
+    <script src="../../functions/messages.js"></script>
+    <script src="../../functions/ajaxFunctions.js"></script>
+    <script src="js/addGrade.js"></script>
+    <link href="../../css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    
+</head>
+<body>
+<div class="banner">
+    <div class="banner-text">
+        <h1>S O K N</h1>
+        <p>System organizacji konferencji naukowych</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
+    <a class="navbar-brand" href="../main/index.html">Strona Główna</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="navbarLinks">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Recenzenta">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti0">
+                    <i class="fas fa-fw fa-paperclip fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Panel Recenzenta</span>
+                    <i class="fas fa-fw fa-ellipsis-h"></i>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti0" data-parent="#navbarLinks">
+                    <li>
+                        <a class="nav-link" href="../article/article.html">
+                            <i class="far fa-fw fa-paper-plane fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Przydzielone artykuły</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-clipboard-list fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">W trakcie recenzji</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Prelegenta">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti1">
+                    <i class="fas fa-fw fa-pencil-alt fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Panel Prelegenta</span>
+                    <i class="fas fa-fw fa-ellipsis-h"></i>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti1" data-parent="#navbarLinks">
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-plus fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Dodaj artykuł</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-file-alt fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Moje artykuły</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mój profil">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-user fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Mój profil</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
+                <a class="nav-link" href="../../user/password/update/update.html">
+                    <i class="fas fa-fw fa-lock fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Zmień hasło</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="O Konferencji">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">O Konferencji</span>
+                    <i class="fas fa-fw fa-ellipsis-h"></i>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti" data-parent="#navbarLinks">
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Program</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Komitet</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">
+                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Poprzednie lata</span>
+                            <i class="fas fa-fw fa-ellipsis-h"></i>
+                        </a>
+                        <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                                    <span class="nav-link-text">Konferencja 2017</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kontakt">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">Kontakt</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Płatności">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">Płatności</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pomoc">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">Pomoc</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
+                <a class="nav-link" href="../../user/contact/send.html">
+                    <i class="fa fa-fw fa-envelope fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Napisz do nas</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
+                    <i class="fas fa-fw fa-sign-out-alt fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Wyloguj</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+    <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
+        <div class="d-flex align-items-stretch" id="margin"></div>
+        <main class="d-flex align-items-stretch" id="mainContent">
+            <form id="grade-form" class="grade-form" style="width: 500px">
+                <h2><span id="article_title"></span></h2>
+                <a>Wybierz ocene dla artykułu a następnie uzasadnij swój wybór poprzez wpisanie komentarza. Aby zapisać ocene kliknij przycisk zatwierdź.</a>
+                <div class="form-group col-md-6">
+                    <label for="grade">Ocena:</label> 
+                    <select id="grade" class="form-control" required>
+                        <option selected value="-2" >Nie wybrano</option>
+                        <option value="-1" >Negatywna</option>
+                        <option value="0" >Neutralna</option>
+                        <option value="1" >Pozytywna</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12 ">
+                    <label for="comment">Komentarz:</label>
+                    <textarea class="form-control" rows="4" id="comment" placeholder="Wpisz komentarz" required></textarea>
+                </div>
+                <button id="submit" type="submit" class="btn btn-danger btn-block" style="margin-bottom: 4%;">Zatwierdź</button>
+                <div id="message-box" style="display:none">
+                    <span id="errMessage"></span>
+                </div>
+                <a class="nav-link-text" href="../article/article.html" style="margin-left: 35%;margin-top: 10px; color: blue">Powrót do artykułów</a>
+            </form>
+        </main>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="text-center">
+            <small>Copyright © SOKN 2018</small>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

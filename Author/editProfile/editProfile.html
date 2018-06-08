@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>SOKN Recenzent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="../../configuration/configuration.js"></script>
+    <!--<script src="../main/js/reviewer.js"></script>-->
+    <link rel="stylesheet" href="../../user/registration/country/css/countrySelect.min.css">
+    <link rel="stylesheet" href="../../user/registration/country/css/demo.css">
+    <script src="../../functions/messages.js"></script>
+    <script src="../../functions/ajaxFunctions.js"></script>
+    <script src="js/editProfile.js"></script>
+    <link href="../../css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    
+</head>
+<body>
+<div class="banner">
+    <div class="banner-text">
+        <h1>S O K N</h1>
+        <p>System organizacji konferencji naukowych</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="mainNav">
+    <a class="navbar-brand" href="../main/index.html">Strona Główna</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav" id="navbarLinks">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Prelegenta">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti1">
+                    <i class="fas fa-fw fa-pencil-alt fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Panel Prelegenta</span>
+                    <i class="fas fa-fw fa-ellipsis-h"></i>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti1" data-parent="#navbarLinks">
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-plus fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Dodaj artykuł</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-file-alt fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Moje artykuły</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mój profil">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-user fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Mój profil</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
+                <a class="nav-link" href="../../user/password/update/update.html">
+                    <i class="fas fa-fw fa-lock fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Zmień hasło</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="O Konferencji">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">O Konferencji</span>
+                    <i class="fas fa-fw fa-ellipsis-h"></i>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti" data-parent="#navbarLinks">
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Program</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">
+                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Komitet</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">
+                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Poprzednie lata</span>
+                            <i class="fas fa-fw fa-ellipsis-h"></i>
+                        </a>
+                        <ul class="sidenav-third-level collapse" id="collapseMulti2">
+                            <li>
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
+                                    <span class="nav-link-text">Konferencja 2017</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kontakt">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">Kontakt</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Płatności">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">Płatności</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pomoc">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
+                    <span class="nav-link-text">Pomoc</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
+                <a class="nav-link" href="../../user/contact/send.html">
+                    <i class="fa fa-fw fa-envelope fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Napisz do nas</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
+                    <i class="fas fa-fw fa-sign-out-alt fa-sm" style="width: 27px;"></i>
+                    <span class="nav-link-text">Wyloguj</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="container-fluid" style="height: 100%; padding-left: 0px; padding-right: 0px; padding-top: 4%;">
+        <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
+            <div class="d-flex align-items-stretch" id="margin"></div>
+            <main class="d-flex align-items-stretch" id="mainContent">
+                <form id="user-form">
+                    <h2>Twoje dane</h2>
+                    <br>
+                    <br/>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="firstName">Imię:</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="Imię" required >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="lastName">Nazwisko:</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Nazwisko" required >
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required >
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="gender">Płeć:</label>
+                        <select id="gender" class="form-control">
+                            <option selected>Mężczyzna</option>
+                            <option>Kobieta</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="degree">Tytuł naukowy:</label>
+                            <select id="degree" class="form-control" required>
+                                <option selected>Profesor</option>
+                                <option>Doktor</option>
+                                <option>Magister</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="affiliation">Stan cywilny:</label>
+                            <select id="affiliation" class="form-control">
+                                <option selected>Kawaler / Panna</option>
+                                <option>Żonaty / Zamężna</option>
+                                <option>Wdowiec / Wdowa</option>
+                                <option>Rozwiedzony / Rozwiedziona</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="degree">Miasto: </label>
+                            <input type="text" class="form-control" id="city" placeholder="Miasto" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="zip_code">Kod pocztowy</label>
+                            <input type="text" pattern="[0-9]{2}-[0-9]{3}" required id="zip_code" class="form-control" placeholder="Kod pocztowy">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="country_selector">Kraj: </label>
+                        <input id="country_selector" class="form-control" type="text">
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-danger btn-block" style="margin-bottom: 4%;">Zapisz</button>
+
+                    <div id="loadingGif" class="loading-gif" style="display: none">
+                        <img src="../../gif/loading.gif" class="loading-gif" width="100px">
+                    </div>
+
+                    <div id="message-box" class="message-box" style="display:none">
+                        <span id="errMessage"></span>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="margin: 0 auto">
+                    <h5 class="modal-title text-center" id="modalLabel">
+                        <strong>Zmiana adresu email</strong>
+                        <p>Adres email jest jednoczesnie loginem. Musisz zostać wylogowany.</p>
+                        <button id="btnSuccess" class="btn btn-danger"
+                                onclick="window.location.replace('../../../index.html')">Strona główna</button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <small>Copyright © SOKN 2018</small>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../../user/registration/country/js/countrySelect.min.js"></script>
+    <script>
+        $("#country_selector").countrySelect({
+            defaultCountry: "pl",
+            preferredCountries: ['pl', 'gb', 'us']
+        });
+    </script>
+</body>
+</html>

@@ -44,7 +44,7 @@ const onSuccessReset = () => {
     let modalLabel = $('#modalLabel');
     modalLabel.empty();
     modalLabel.append(`<strong>Gratulacje!</strong><br>
-                    <p">Hasło zostało pomyślnie zmienione.</p>
+                    <p>Hasło zostało pomyślnie zmienione.</p>
                     <button id="btnSuccess" class="btn btn-danger"
                     onclick="window.location.replace('../../../index.html')">Strona główna</button>`)
 };

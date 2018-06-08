@@ -28,7 +28,7 @@ function readyToPost(){
     $("#addArticleForm").submit(function() {
         event.preventDefault();
         if(checkData()){
-            postDataWithFile(prepareData(),"article/uploadArticle");
+            postDataWithFile(prepareData(),"/uploadArticle");
         }
     });
 }

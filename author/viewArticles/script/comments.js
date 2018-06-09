@@ -1,21 +1,15 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     const articleId=sessionStorage.getItem('articleId');
     sessionStorage.removeItem('articleId');
-    postDataAsUser(articleId,"article/getArticle");
+    postDataWithToken(articleId,"/getArticle");
 });
 
 
 function completePostBody(data){
-    if(data.status==200 && JSON.parse(data.responseText).length>0){  
-        var dataObject=JSON.parse(data.responseText);
-        alert(dataObject[0].articleGrade.id)
-        $("#comments").html(dataObject[0].articleGrade.id)
-        
-    }else if(data.status==200){
-        var dataObject=JSON.parse(data.responseText);
-        $("#message").html("<h1>Brak dodanych artykułów</h1>")
+    if(data.status==200 ){  
+        var dataObject=JSON.parse(data.responseText)
+        $("#comments").html(dataObject.articleGrade.comment);
     }else{
-        alert("kos")
-        $("#message").html("<h1>Wystąpił błąd. Spróbuj ponownie<h1>");
+        $("#comments").html("<h3>Wystąpił błąd. Spróbuj ponownie<h3>");
     }
 }

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <title>SOKN Prelegent</title>
+    <title>SOKN Recenzent</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../../configuration/configuration.js"></script>
+    <script src="js/reviewer.js"></script>
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-    <script src="../../configuration/configuration.js"></script>
-    <script src="/js/author.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -29,68 +30,68 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-sidenav" id="navbarLinks" >
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Prelegenta">
-                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti1">
-                            <i class="fas fa-fw fa-pencil-alt fa-sm" style="width: 27px"></i>
-                            <span class="nav-link-text">Panel Prelegenta</span>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Panel Recenzenta">
+                        <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti0">
+                            <i class="fas fa-fw fa-paperclip fa-sm" style="width: 27px;"></i>
+                            <span class="nav-link-text">Panel Recenzenta</span>
                             <i class="fas fa-fw fa-ellipsis-h"></i>
                         </a>
-                        <ul class="sidenav-second-level collapse" id="collapseMulti1" data-parent="#navbarLinks">
+                        <ul class="sidenav-second-level collapse" id="collapseMulti0" data-parent="#navbarLinks">
                             <li>
-                                <a class="nav-link" href="../addArticle/addArticle.html">
-                                    <i class="fas fa-fw fa-plus fa-sm" style="width: 27px"></i>
-                                    <span class="nav-link-text">Dodaj artykuł</span>
+                                <a class="nav-link" href="/reviewer/article/article.html">
+                                    <i class="far fa-fw fa-paper-plane fa-sm" style="width: 27px;"></i>
+                                    <span class="nav-link-text">Przydzielone artykuły</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../viewArticles/viewArticles.html">
-                                    <i class="fas fa-fw fa-file-alt fa-sm" style="width: 27px"></i>
-                                    <span class="nav-link-text">Moje artykuły</span>
+                                <a class="nav-link" href="">
+                                    <i class="fas fa-fw fa-clipboard-list fa-sm" style="width: 27px;"></i>
+                                    <span class="nav-link-text">W trakcie recenzji</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Mój profil">
                         <a class="nav-link" href="../editProfile/editProfile.html">
-                            <i class="fas fa-fw fa-user fa-sm" style="width: 27px"></i>
+                            <i class="fas fa-fw fa-user fa-sm" style="width: 27px;"></i>
                             <span class="nav-link-text">Mój profil</span>
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Zmień hasło">
                         <a class="nav-link" href="../../user/password/update/update.html">
-                            <i class="fas fa-fw fa-lock fa-sm" style="width: 27px"></i>
+                            <i class="fas fa-fw fa-lock fa-sm" style="width: 27px;"></i>
                             <span class="nav-link-text">Zmień hasło</span>
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="O Konferencji">
                         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti">
-                            <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px"></i>
+                            <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
                             <span class="nav-link-text">O Konferencji</span>
                             <i class="fas fa-fw fa-ellipsis-h"></i>
                         </a>
                         <ul class="sidenav-second-level collapse" id="collapseMulti" data-parent="#navbarLinks">
                             <li>
                                 <a class="nav-link" href="../program/program.html">
-                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px"></i>
+                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
                                     <span class="nav-link-text">Program</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="../commite/index.html">
-                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px"></i>
+                                <a class="nav-link" href="">
+                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
                                     <span class="nav-link-text">Komitet</span>
                                 </a>
                             </li>
                             <li>
                                 <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">
-                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px"></i>
+                                    <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
                                     <span class="nav-link-text">Poprzednie lata</span>
                                     <i class="fas fa-fw fa-ellipsis-h"></i>
                                 </a>
                                 <ul class="sidenav-third-level collapse" id="collapseMulti2">
                                     <li>
                                         <a class="nav-link" href="../konferencja2017.html">
-                                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px"></i>
+                                            <i class="fas fa-fw fa-caret-right fa-sm" style="width: 27px;"></i>
                                             <span class="nav-link-text">Konferencja 2017</span>
                                         </a>
                                     </li>
@@ -100,13 +101,13 @@
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Płatności">
                         <a class="nav-link" href="../payments/payments.html">
-                            <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px"></i>
+                            <i class="fas fa-fw fa-caret-right fa-lg" style="width: 27px;"></i>
                             <span class="nav-link-text">Płatności</span>
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Napisz do nas">
                         <a class="nav-link" href="../../user/contact/send.html">
-                            <i class="fa fa-fw fa-envelope" style="width: 27px"></i>
+                            <i class="fa fa-fw fa-envelope fa-sm" style="width: 27px;" ></i>
                             <span class="nav-link-text">Napisz do nas</span>
                         </a>
                     </li>
@@ -114,7 +115,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../../index.html" onclick="localStorage.removeItem('token')">
-                            <i class="fas fa-fw fa-sign-out-alt" style="width: 27px"></i>
+                            <i class="fas fa-fw fa-sign-out-alt fa-sm" style="width: 27px;"></i>
                             <span class="nav-link-text">Wyloguj</span>
                         </a>
                     </li>
@@ -126,15 +127,32 @@
             <div class="d-flex flex-row" style="height: 100%; min-height: 800px">
                 <div class="d-flex align-items-stretch" id="margin"></div>
                 <main class="d-flex align-items-stretch" id="mainContent">
- <div>
-                    <h1 style="clear:both;">X Interdyscyplinarna Konferencja Naukowa TYGIEL 2018</h1> </br>
-
-                    <h2>„Interdyscyplinarność kluczem do rozwoju”</h2>
-                </br>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet eros vel elit volutpat facilisis. Suspendisse potenti. Etiam commodo eros a nunc rutrum, rhoncus accumsan lectus hendrerit. Integer id pharetra ante, non pulvinar nisi. Integer rhoncus lorem lacus, et sollicitudin est elementum ac. Suspendisse ultrices diam vitae elementum maximus. Nunc gravida facilisis purus, finibus imperdiet felis varius in. Vivamus vestibulum tellus velit, vitae dignissim enim dapibus a. Integer eget elementum tellus, ac malesuada risus. Maecenas fermentum feugiat tempus. Praesent vehicula, eros in lacinia placerat, lectus diam tempus lorem, sit amet volutpat enim ligula eget augue. Integer mattis ex sit amet lectus convallis finibus. Curabitur congue in erat sit amet rhoncus.
-
-Nunc pretium sed turpis a porttitor. Aenean eu felis pellentesque, congue augue sed, congue odio. Quisque venenatis turpis vitae magna iaculis vulputate. Phasellus vitae quam vitae erat tincidunt venenatis vitae vel dui. Etiam in sollicitudin ante. Curabitur efficitur interdum augue, vel imperdiet mauris elementum ac. Aenean cursus nisl est, non faucibus nunc fringilla ut. Aliquam elementum aliquet dignissim. Cras scelerisque ac arcu ut aliquet. Nulla tristique porta sem, non pellentesque sem accumsan ac. Pellentesque vel ligula nec massa maximus molestie sit amet at arcu. Nulla id mauris ut purus suscipit tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis at nulla id ligula pellentesque mollis. Vestibulum dictum molestie aliquam. In aliquam elit eget urna accumsan hendrerit eget pulvinar sapien.</p>
+                    <div>
+                        <h4>Komitet konferencji:</h4>
+                        <ul>
+                            <li>dr Piotr Idczak (przewodniczący)
+                                Uniwersytet Ekonomiczny w Poznaniu</li>
+                            <li>
+                                 dr Grzegorz Mazur
+                                  Uniwersytet Ekonomiczny w Poznaniu 
+                            </li>
+                            <li>
+                                    dr Judyta Cabańska
+                                    Uniwersytet Ekonomiczny w Poznaniu
+                            </li>
+                            <li>
+                                    dr Adam Jaskulski
+                                    Uniwersytet im. Adama Mickiewicza w Poznaniu
+                            </li>
+                            <li>
+                                    dr Ida Musiałkowska
+                                    Uniwersytet Ekonomiczny w Poznaniu
+                            </li>
+                            <li>
+                                    dr Łukasz Wróblewski
+                                    Uniwersytet Ekonomiczny w Poznaniu
+                            </li>
+                        </ul>          
                     </div>
                 </main>
             </div>
@@ -147,6 +165,5 @@ Nunc pretium sed turpis a porttitor. Aenean eu felis pellentesque, congue augue 
                 </div>
             </div>
     </footer>
-
 </body>
 </html>

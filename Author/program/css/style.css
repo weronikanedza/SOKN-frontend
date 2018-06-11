@@ -7,6 +7,9 @@
     }
 }
 
+table,th,td{
+    border: 1px solid black;
+}
 #mainContent {
     padding-left: 5%;
     padding-right: 13%;
@@ -20,9 +23,6 @@ footer{
 
 }
 
-table,th,td{
-    border: 1px solid black;
-}
 html,body {
     height: available;
 }
@@ -95,7 +95,4 @@ body {
 
 .ml-auto>li>a:hover {
     background: #59636dff!important;
-}
-.panel-default>.panel-heading>.panel-title>a {
-    color: #59636D;
 }

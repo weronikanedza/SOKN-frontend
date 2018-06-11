@@ -1,3 +1,4 @@
+
 @media (min-width: 992px) {
     #margin {
         background: #59636dff;
@@ -13,6 +14,10 @@
     background: white;
 }
 
+table,td,th{
+    border: 1px solid black;
+}
+
 footer{
     background: #ADB5BD;
     position: center;
@@ -20,9 +25,6 @@ footer{
 
 }
 
-table,th,td{
-    border: 1px solid black;
-}
 html,body {
     height: available;
 }
@@ -55,7 +57,9 @@ body {
 #mainNav {
     background: #59636dff!important;
 }
-
+#navbarLinks {
+    display: flex;
+}
 .nav-link-text{
     color: #E7E9EB;
 }
@@ -95,7 +99,4 @@ body {
 
 .ml-auto>li>a:hover {
     background: #59636dff!important;
-}
-.panel-default>.panel-heading>.panel-title>a {
-    color: #59636D;
 }
